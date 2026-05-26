@@ -8,66 +8,58 @@
 :root{
   --blue:#1a3fa8;--blue-dk:#0f2670;--blue-md:#2a55cc;--blue-lt:#e8eef8;--blue-xlt:#f0f4fb;
   --red:#dc4a0a;--red-lt:#ef6020;
-  --gold:#c89a2e;--gold-lt:#e0b84a;
+  --gold:#c89a2e;--gold-lt:#e0b84a;--gold-dim:rgba(200,154,46,.12);
+  --teal:#0d7377;--teal-lt:#14a085;--teal-dim:rgba(13,115,119,.1);
   --gray:#6b7280;--gray-lt:#9ca3af;--gray-dk:#374151;
   --off:#f4f6fb;--border:#e5e7eb;--white:#fff;--dark:#111827;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'Outfit',sans-serif;background:var(--off);color:var(--dark);overflow-x:hidden;}
-
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:66px;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 52px;background:white;border-bottom:1px solid var(--border);
+  padding:0 48px;background:white;border-bottom:1px solid var(--border);
   box-shadow:0 1px 10px rgba(0,0,0,.05);}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .logo-text{display:flex;flex-direction:column;line-height:1.1;}
 .logo-name{font-size:17px;font-weight:800;color:var(--blue-dk);letter-spacing:.3px;}
 .logo-sub{font-size:8.5px;font-weight:600;color:var(--gray-lt);text-transform:uppercase;letter-spacing:2px;}
 .nl{display:flex;gap:2px;}
-.nl a{font-size:12.5px;font-weight:600;color:var(--gray);text-decoration:none;
-  padding:6px 11px;border-radius:8px;transition:color .15s,background .15s;white-space:nowrap;}
+.nl a{font-size:12px;font-weight:600;color:var(--gray);text-decoration:none;
+  padding:6px 10px;border-radius:8px;transition:color .15s,background .15s;white-space:nowrap;}
 .nl a:hover{color:var(--dark);background:#f3f4f6;}
 .nl a.on{color:var(--blue);background:var(--blue-lt);}
+.nl a.on-innovate{color:var(--teal);background:var(--teal-dim);}
 .enroll{background:var(--red);color:white;font-size:13px;font-weight:700;
   padding:9px 20px;border-radius:8px;text-decoration:none;transition:background .15s;white-space:nowrap;}
 .enroll:hover{background:var(--red-lt);}
 .hbg{display:none;background:none;border:none;font-size:24px;cursor:pointer;color:var(--dark);}
-
 .btn{display:inline-block;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;
   padding:12px 26px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:all .15s;}
 .btn-blue{background:var(--blue);color:white;}.btn-blue:hover{background:var(--blue-md);}
 .btn-red{background:var(--red);color:white;}.btn-red:hover{background:var(--red-lt);}
+.btn-teal{background:var(--teal);color:white;}.btn-teal:hover{background:var(--teal-lt);}
+.btn-gold{background:var(--gold);color:white;}.btn-gold:hover{background:var(--gold-lt);}
 .btn-out{background:white;color:var(--blue);border:2px solid var(--blue);}.btn-out:hover{background:var(--blue-lt);}
 .btn-out-w{background:transparent;color:white;border:2px solid rgba(255,255,255,.4);}.btn-out-w:hover{border-color:white;}
 .btn-ghost{background:transparent;color:var(--gray-dk);border:2px solid var(--border);}.btn-ghost:hover{border-color:var(--gray-lt);}
-
 .sec{padding:84px 52px;}
-.bg-white{background:white;}
-.bg-off{background:var(--off);}
-.bg-blue{background:var(--blue-dk);}
-.bg-lt{background:var(--blue-lt);}
-
+.bg-white{background:white;}.bg-off{background:var(--off);}
+.bg-blue{background:var(--blue-dk);}.bg-teal{background:var(--teal);}
 .lbl{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
   color:var(--red);display:flex;align-items:center;gap:8px;margin-bottom:10px;}
-.lbl::before{content:'';display:block;width:18px;height:2px;background:var(--red);flex-shrink:0;}
+.lbl::before{content:'';display:block;width:18px;height:2px;background:currentColor;flex-shrink:0;}
+.lbl-teal{color:var(--teal);}.lbl-blue{color:var(--blue);}
 .h2{font-size:clamp(28px,4.5vw,48px);font-weight:800;line-height:1.05;color:var(--dark);margin-bottom:14px;}
 .lead{font-size:15px;color:var(--gray);line-height:1.76;max-width:560px;}
-
 .ticker{background:var(--blue-dk);padding:10px 52px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
 .ticker span{font-size:12px;font-weight:600;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:1px;}
 .ticker .sp{color:rgba(255,255,255,.22);}
 .ticker .hi{color:var(--gold-lt);font-weight:700;}
-
-.card{background:white;border:1px solid var(--border);border-radius:14px;padding:26px 22px;
-  transition:box-shadow .2s,transform .2s;}
-.card:hover{box-shadow:0 6px 22px rgba(26,63,168,.1);transform:translateY(-3px);}
-
 .rv{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
 .rv.in{opacity:1;transform:translateY(0);}
 .d1{transition-delay:.07s;}.d2{transition-delay:.14s;}.d3{transition-delay:.21s;}
 .d4{transition-delay:.28s;}.d5{transition-delay:.35s;}
-
 footer{background:var(--blue-dk);color:white;padding:52px 52px 30px;}
 .fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:42px;}
 .fn{font-size:19px;font-weight:800;margin-bottom:10px;}
@@ -85,7 +77,6 @@ footer{background:var(--blue-dk);color:white;padding:52px 52px 30px;}
 .fb{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;
   display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
 .fc2{font-size:12px;color:rgba(255,255,255,.22);}
-
 @media(max-width:960px){
   nav{padding:0 18px;}
   .nl{display:none;position:absolute;top:66px;left:0;right:0;background:white;
@@ -100,33 +91,63 @@ footer{background:var(--blue-dk);color:white;padding:52px 52px 30px;}
   .fg{grid-template-columns:1fr 1fr;gap:26px;}
 }
 
-.hero{min-height:60vh;display:flex;align-items:center;
+.hero{min-height:62vh;display:flex;align-items:center;
   background:linear-gradient(120deg,var(--blue-lt),white);
   padding:110px 52px 60px;border-bottom:1px solid var(--border);}
-.hc{max-width:680px;}
+.hc{max-width:700px;}
 .kicker{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
   color:var(--red);display:flex;align-items:center;gap:8px;margin-bottom:16px;}
 .kicker::before{content:'';display:block;width:18px;height:2px;background:var(--red);}
 .hero h1{font-size:clamp(38px,6vw,66px);font-weight:900;line-height:1.02;color:var(--dark);margin-bottom:16px;}
 .hero h1 em{color:var(--blue);font-style:normal;}
-.hero-sub{font-size:16px;color:var(--gray);line-height:1.74;max-width:520px;}
-/* mission */
-.mlay{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
-.mq{font-size:clamp(18px,3vw,28px);font-weight:800;color:var(--dark);line-height:1.12;margin-bottom:18px;}
-.mq em{color:var(--blue);font-style:normal;}
-.mb{font-size:15px;color:var(--gray);line-height:1.78;}
-.vals{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.vc{background:white;border:1px solid var(--border);border-radius:12px;padding:18px 16px;}
-.vci{font-size:22px;margin-bottom:8px;}
-.vct{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:5px;}
-.vcd{font-size:12.5px;color:var(--gray);line-height:1.55;}
-/* ignite */
+.hero-sub{font-size:16px;color:var(--gray);line-height:1.74;max-width:540px;}
+
+/* APPROACH */
+.approach{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+.ap-quote{font-size:clamp(18px,2.5vw,26px);font-weight:700;color:var(--dark);
+  line-height:1.25;border-left:4px solid var(--blue);padding-left:22px;margin-bottom:20px;}
+.ap-quote em{color:var(--red);font-style:normal;}
+.ap-body{font-size:15px;color:var(--gray);line-height:1.78;}
+.ap-principles{display:flex;flex-direction:column;gap:14px;}
+.ap-p{background:white;border:1px solid var(--border);border-radius:12px;padding:18px 18px 18px 20px;
+  border-left:3px solid var(--blue);}
+.ap-p.red{border-left-color:var(--red);}
+.ap-p.gold{border-left-color:var(--gold);}
+.ap-p.teal{border-left-color:var(--teal);}
+.ap-pt{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+.ap-pd{font-size:13px;color:var(--gray);line-height:1.6;}
+
+/* DT SECTION */
+.dt-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:44px;}
+.dt-step{background:white;border:1px solid var(--border);border-radius:14px;padding:20px 16px;
+  text-align:center;position:relative;transition:box-shadow .2s,transform .2s;}
+.dt-step:hover{box-shadow:0 4px 18px rgba(26,63,168,.1);transform:translateY(-3px);}
+.dt-step::after{content:'→';position:absolute;right:-18px;top:50%;transform:translateY(-50%);
+  font-size:16px;color:var(--gray-lt);}
+.dt-step:last-child::after{display:none;}
+.dt-num{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gray-lt);margin-bottom:8px;}
+.dt-ico{font-size:28px;margin-bottom:8px;}
+.dt-title{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:5px;}
+.dt-desc{font-size:11.5px;color:var(--gray);line-height:1.55;}
+
+/* SKILLS */
+.skills-big{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px;}
+.sg{background:white;border:1px solid var(--border);border-radius:16px;padding:26px 22px;}
+.sg-t{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;}
+.sg-blue{color:var(--blue);}.sg-red{color:var(--red);}
+.skill-list{display:flex;flex-direction:column;gap:8px;}
+.sl{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--dark);}
+.sl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.sl-d{font-size:12px;color:var(--gray);margin-top:2px;}
+
+/* IGNITE */
 .ig-lay{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;}
-.igcs{display:flex;flex-direction:column;gap:10px;}
+.ig-cards{display:flex;flex-direction:column;gap:10px;}
 .igc{background:white;border:1px solid var(--border);border-radius:12px;padding:15px 17px;}
 .igcy{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gray-lt);margin-bottom:4px;}
 .igcr{font-size:14px;font-weight:700;color:var(--dark);}
-/* coaches */
+
+/* COACHES */
 .coaches{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px;}
 .coach{background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden;
   text-align:center;transition:box-shadow .2s,transform .2s;}
@@ -139,13 +160,15 @@ footer{background:var(--blue-dk);color:white;padding:52px 52px 30px;}
 .csp{display:inline-block;margin-top:7px;font-size:10px;font-weight:700;
   text-transform:uppercase;letter-spacing:.5px;color:var(--blue);
   background:var(--blue-lt);border-radius:4px;padding:2px 8px;}
-/* locations */
+
+/* LOCATIONS */
 .llg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px;}
 .llc{background:white;border:1px solid var(--border);border-radius:14px;padding:20px;}
 .lln{font-size:19px;font-weight:800;color:var(--dark);margin-bottom:6px;}
 .lla{font-size:13.5px;color:var(--gray);line-height:1.6;margin-bottom:8px;}
 .llt{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--blue);}
-/* faq */
+
+/* FAQ */
 .faqlist{display:flex;flex-direction:column;gap:10px;margin-top:44px;}
 .faqitem{background:white;border:1px solid var(--border);border-radius:12px;overflow:hidden;}
 .faqq{font-size:15px;font-weight:700;color:var(--dark);padding:17px 20px;cursor:pointer;
@@ -155,11 +178,12 @@ footer{background:var(--blue-dk);color:white;padding:52px 52px 30px;}
 .faqitem.open .faqa{display:block;}
 .arr{font-size:13px;color:var(--gray-lt);transition:transform .22s;}
 .faqitem.open .arr{transform:rotate(180deg);}
+
 @media(max-width:960px){
   .hero{padding:100px 20px 52px;}
-  .mlay,.ig-lay{grid-template-columns:1fr;}
-  .vals{grid-template-columns:1fr 1fr;}
-  .coaches{grid-template-columns:1fr 1fr;}
+  .approach,.ig-lay{grid-template-columns:1fr;}
+  .dt-grid{grid-template-columns:1fr 1fr;}.dt-step::after{display:none;}
+  .skills-big,.coaches{grid-template-columns:1fr 1fr;}
   .llg{grid-template-columns:1fr;}
 }
 </style>
@@ -177,82 +201,158 @@ footer{background:var(--blue-dk);color:white;padding:52px 52px 30px;}
   <div class="nl"><a href="index.html" class="">Home</a>
     <a href="ignite.html" class="">Ignite Curiosity</a>
     <a href="build.html" class="">Build Mastery</a>
-    <a href="create.html" class="">Create & Compete</a>
+    <a href="compete.html" class="">Compete</a>
+    <a href="innovate.html" class="">Innovate</a>
     <a href="about.html" class="on">About</a></div>
   <a href="https://app.amilia.com/store/en/blazeroboticsacademy/shop/programs" class="enroll">Enroll Now</a>
 </nav>
 
 <section class="hero">
   <div class="hc">
-    <div class="kicker">Our Story · 20+ Years of Excellence</div>
-    <h1>We Build<br>More Than <em>Robots</em></h1>
-    <p class="hero-sub">Blaze Robotics Academy has been developing the Eastside's next generation of engineers, leaders, and innovators for over 20 years. Robotics is how we do it. Character — and a love of making things — is what we build.</p>
+    <div class="kicker">Our Story · 20+ Years · Eastside WA</div>
+    <h1>We Build<br>Engineers.<br><em>Not Just Robots.</em></h1>
+    <p class="hero-sub">Blaze Robotics Academy has spent 20+ years developing the Eastside's next generation of engineers, innovators, and leaders. Our philosophy is simple: build the right foundation, and everything else follows — including the trophies.</p>
   </div>
 </section>
 
 <div class="ticker">
-  <span>🎓 20+ Years Training Young Engineers</span><span class="sp">|</span>
-  <span>🔗 Partner Academy to Ignite Robotics</span><span class="sp">|</span>
-  <span>📍 4 Eastside Locations</span><span class="sp">|</span>
-  <span>⚙️ Grades K–12 · VEX Robotics · 3D Design</span>
+  <span>🧠 Design Thinking</span><span class="sp">|</span>
+  <span>⚙️ Engineering Excellence</span><span class="sp">|</span>
+  <span>🌟 Soft Skills</span><span class="sp">|</span>
+  <span>🏆 Competitive Results Follow</span><span class="sp">|</span>
+  <span>📍 4 Eastside Locations</span>
 </div>
 
-<section class="sec bg-white">
-  <div class="mlay">
+<!-- APPROACH -->
+<section class="sec bg-white" id="approach">
+  <div class="approach">
     <div class="rv">
-      <div class="lbl">Our Mission</div>
-      <div class="mq">Robotics is the platform. <em>Character is the outcome.</em></div>
-      <p class="mb">We believe every student who walks through our doors has the potential to become an engineer, a leader, a communicator, and a problem-solver. Competition is one way to grow — but not the only way. Our programs serve students at every level of ambition.</p>
-      <p class="mb" style="margin-top:14px;">Whether your child is here to explore, to master a skill, to create ambitious projects, or to compete at the highest level — this is the place.</p>
+      <div class="lbl">Our Approach</div>
+      <div class="ap-quote">Do things right.<br><em>Results follow.</em></div>
+      <p class="ap-body">We've watched too many programs chase trophies and miss the point. When students genuinely understand engineering — when they can articulate why a design works, debug their own code, and adapt under pressure as a team — competition results become the natural outcome, not the goal.</p>
+      <p class="ap-body" style="margin-top:14px;">That's why we lead with design thinking, engineering excellence, and the soft skills that make great teams. Every program, every course, every session is built around this conviction.</p>
     </div>
-    <div class="vals rv d2">
-      <div class="vc"><div class="vci">⚡</div><div class="vct">Excellence</div><div class="vcd">High standards aren't pressure. They're respect for what our students are capable of.</div></div>
-      <div class="vc"><div class="vci">🤝</div><div class="vct">Teamwork</div><div class="vcd">No robot wins alone. Every student learns to collaborate, communicate, and lead.</div></div>
-      <div class="vc"><div class="vci">🔁</div><div class="vct">Grit</div><div class="vcd">Robots break. Code crashes. Our students learn to embrace the rebuild — that's where growth lives.</div></div>
-      <div class="vc"><div class="vci">🌱</div><div class="vct">Growth</div><div class="vcd">The measure of success is always progress — not just medals, but mindset and maturity.</div></div>
+    <div class="ap-principles rv d2">
+      <div class="ap-p"><div class="ap-pt">The why matters more than the what</div><div class="ap-pd">Students who understand the engineering principle behind a solution can adapt when conditions change. That's the difference between training and education.</div></div>
+      <div class="ap-p red"><div class="ap-pt">Every robot is built by a team</div><div class="ap-pd">Communication, conflict resolution, and shared ownership aren't soft — they're hard engineering requirements that determine whether the robot works at 9 PM before a tournament.</div></div>
+      <div class="ap-p gold"><div class="ap-pt">Failure is the curriculum</div><div class="ap-pd">Robots break. Code crashes. Designs fail completely. We teach students to treat every failure as data and every rebuild as progress — because that's exactly how real engineering works.</div></div>
+      <div class="ap-p teal"><div class="ap-pt">Engineering has a responsibility</div><div class="ap-pd">The best engineers build things that matter — not just things that win. Our Innovate track exists because we believe robotics skills belong in the community, not only on the competition floor.</div></div>
     </div>
   </div>
 </section>
 
+<!-- DESIGN THINKING PROCESS -->
+<section class="sec bg-off">
+  <div class="rv">
+    <div class="lbl">Design Thinking</div>
+    <div class="h2">The Engineering Mindset<br>Behind Everything We Teach</div>
+    <p class="lead">Every Blaze program — from RoboQuests to Capstone Engineering — uses the same design thinking framework that real engineers use. Students don't just build robots. They learn to think like builders.</p>
+  </div>
+  <div class="dt-grid">
+    <div class="dt-step rv d1">
+      <div class="dt-num">01</div><div class="dt-ico">🔍</div>
+      <div class="dt-title">Empathize</div>
+      <div class="dt-desc">Understand the real problem before building anything. Who has this problem? Why does it matter?</div>
+    </div>
+    <div class="dt-step rv d2">
+      <div class="dt-num">02</div><div class="dt-ico">📋</div>
+      <div class="dt-title">Define</div>
+      <div class="dt-desc">Translate observations into a clear, specific problem statement. Constraints are part of the design.</div>
+    </div>
+    <div class="dt-step rv d3">
+      <div class="dt-num">03</div><div class="dt-ico">💭</div>
+      <div class="dt-title">Ideate</div>
+      <div class="dt-desc">Generate many ideas without judgment. The best solution is rarely the first one.</div>
+    </div>
+    <div class="dt-step rv d4">
+      <div class="dt-num">04</div><div class="dt-ico">🔧</div>
+      <div class="dt-title">Prototype</div>
+      <div class="dt-desc">Build fast, build rough. The goal of a prototype is to learn, not to impress.</div>
+    </div>
+    <div class="dt-step rv d5">
+      <div class="dt-num">05</div><div class="dt-ico">🔁</div>
+      <div class="dt-title">Test &amp; Iterate</div>
+      <div class="dt-desc">Test with real conditions. Find what breaks. Improve. Repeat until it's right.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="sec bg-white">
+  <div class="rv">
+    <div class="lbl">What Students Build</div>
+    <div class="h2">Technical &amp; Human Skills<br>Develop Simultaneously</div>
+    <p class="lead">Robotics is the platform. These are the real outcomes — built into every session, every project, every team interaction, every season.</p>
+  </div>
+  <div class="skills-big">
+    <div class="sg rv d1">
+      <div class="sg-t sg-blue">Technical Skills</div>
+      <div class="skill-list">
+        <div class="sl"><div class="sl-dot" style="background:var(--blue);"></div><div><div>Mechanical Engineering &amp; Robot Design</div><div class="sl-d">Building functional mechanisms that actually work under real conditions</div></div></div>
+        <div class="sl"><div class="sl-dot" style="background:var(--blue);"></div><div><div>Programming — Python &amp; C++</div><div class="sl-d">Text-based code for both autonomous and driver-controlled systems</div></div></div>
+        <div class="sl"><div class="sl-dot" style="background:var(--blue);"></div><div><div>3D CAD Design</div><div class="sl-d">Tinkercad and Fusion 360 for custom parts and prototypes</div></div></div>
+        <div class="sl"><div class="sl-dot" style="background:var(--blue);"></div><div><div>Systems Thinking</div><div class="sl-d">Understanding how components interact and affect each other</div></div></div>
+        <div class="sl"><div class="sl-dot" style="background:var(--blue);"></div><div><div>Engineering Documentation</div><div class="sl-d">Notebooks, design reviews, and technical communication</div></div></div>
+        <div class="sl"><div class="sl-dot" style="background:var(--blue);"></div><div><div>Sensors, Actuators &amp; Electronics</div><div class="sl-d">How hardware and software connect in physical systems</div></div></div>
+      </div>
+    </div>
+    <div class="sg rv d2">
+      <div class="sg-t sg-red">Human Skills</div>
+      <div class="skill-list">
+        <div class="sl"><div class="sl-dot" style="background:var(--red);"></div><div><div>Collaboration &amp; Teamwork</div><div class="sl-d">Working with others under real time pressure toward a shared goal</div></div></div>
+        <div class="sl"><div class="sl-dot" style="background:var(--red);"></div><div><div>Communication</div><div class="sl-d">Explaining technical ideas clearly — to teammates, coaches, and judges</div></div></div>
+        <div class="sl"><div class="sl-dot" style="background:var(--red);"></div><div><div>Leadership</div><div class="sl-d">Taking ownership, making decisions, and supporting others to do the same</div></div></div>
+        <div class="sl"><div class="sl-dot" style="background:var(--red);"></div><div><div>Critical Thinking</div><div class="sl-d">Evaluating options, weighing trade-offs, and choosing well under constraints</div></div></div>
+        <div class="sl"><div class="sl-dot" style="background:var(--red);"></div><div><div>Creativity</div><div class="sl-d">Approaching problems without assuming the conventional solution is the best one</div></div></div>
+        <div class="sl"><div class="sl-dot" style="background:var(--red);"></div><div><div>Grit &amp; Resilience</div><div class="sl-d">Staying engaged and adapting when the first plan doesn't survive contact with reality</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IGNITE PARTNERSHIP -->
 <section class="sec bg-off" id="ignite">
   <div class="ig-lay">
     <div class="rv">
       <div class="lbl">Our Partnership</div>
-      <div class="h2">Blaze + Ignite Robotics</div>
-      <p class="lead" style="margin-top:12px;">Blaze Robotics Academy and Ignite Robotics are part of the same ecosystem. Blaze is the academy — where students learn the craft. Ignite is the elite competitive club — where our best go on to compete at the highest levels in the world.</p>
-      <p class="lead" style="margin-top:14px;">The 2026 VEX World Champions built their craft in programs like ours. That pipeline is what the Blaze → Ignite pathway is built to produce — for the students who want it.</p>
+      <div class="h2">Blaze + Ignite:<br>The Foundation &amp; What It Produces</div>
+      <p class="lead" style="margin-top:12px;">Blaze is the training academy — where students build the engineering foundation. Ignite Robotics is the elite competitive club where our students go on to compete at state, national, and world-championship levels.</p>
+      <p class="lead" style="margin-top:14px;">The 2026 VEX World Champions on Team 10B built their foundation in programs like ours. Those results aren't accidental. They're what design thinking, engineering excellence, and strong teams produce — when the foundation is right.</p>
       <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;">
-        <a href="create.html" class="btn btn-blue">Our Competition Teams</a>
-        <a href="build.html" class="btn btn-ghost">Comp Prep Course</a>
+        <a href="compete.html" class="btn btn-blue">Competition Teams</a>
+        <a href="innovate.html" class="btn btn-ghost">Innovate Track</a>
       </div>
     </div>
     <div class="rv d2">
       <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gray-lt);margin-bottom:14px;">Ignite Robotics — 2026 VEX Worlds Results</div>
-      <div class="igcs">
+      <div class="ig-cards">
         <div class="igc"><div class="igcy">High School · Team 10B</div><div class="igcr">🏆 VEX World Champions 2026</div></div>
         <div class="igc"><div class="igcy">High School · Teams 10C, 10K, 10P, 10W, 917X</div><div class="igcr">🔥 Division Finals · Multiple Top 16 Finishes</div></div>
         <div class="igc"><div class="igcy">Middle School · Teams 938A–938R</div><div class="igcr">🥇 Innovate Awards · Alliance Finals</div></div>
         <div style="background:#fdf8ee;border:1px solid rgba(200,154,46,.28);border-radius:10px;padding:13px 15px;">
-          <div style="font-size:13px;color:var(--gray);line-height:1.65;"><strong style="color:var(--gold);">Note:</strong> These achievements belong to Ignite Robotics. Blaze is the training pipeline — and this is what the pathway is built toward.</div>
+          <div style="font-size:13px;color:var(--gray);line-height:1.65;"><strong style="color:var(--gold);">Note:</strong> These achievements belong to Ignite Robotics. Blaze is the training foundation — and this is what the right foundation consistently produces.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- COACHING TEAM -->
 <section class="sec bg-white" id="team">
-  <div class="rv"><div class="lbl">The Coaching Staff</div><div class="h2">Coaches Who Compete &amp; Care</div><p class="lead">Our coaches bring competitive robotics experience, engineering backgrounds, and a genuine passion for developing young talent — competitive or not.</p></div>
+  <div class="rv"><div class="lbl">Our Coaches</div><div class="h2">Engineers Who<br>Teach &amp; Inspire</div>
+  <p class="lead">Our coaches bring real engineering experience, deep robotics knowledge, and genuine investment in every student's growth — technical and personal.</p></div>
   <div class="coaches">
-    <div class="coach rv d1"><div class="cav">👨‍🏫</div><div class="cbo"><div class="cn">Head Coach</div><div class="cr">Lead Robotics Instructor</div><div class="csp">VEX IQ &amp; V5</div></div></div>
-    <div class="coach rv d2"><div class="cav">👩‍💻</div><div class="cbo"><div class="cn">Programming Lead</div><div class="cr">Coding &amp; Autonomous</div><div class="csp">Python · C++</div></div></div>
-    <div class="coach rv d3"><div class="cav">🔧</div><div class="cbo"><div class="cn">Build Coach</div><div class="cr">Mechanical Design</div><div class="csp">CAD · 3D Print</div></div></div>
-    <div class="coach rv d4"><div class="cav">🏆</div><div class="cbo"><div class="cn">Competition Coach</div><div class="cr">Strategy &amp; Tournament Prep</div><div class="csp">Comp Prep Lead</div></div></div>
+    <div class="coach rv d1"><div class="cav">👨‍🏫</div><div class="cbo"><div class="cn">Head Coach</div><div class="cr">Design Thinking Lead</div><div class="csp">VEX IQ &amp; V5</div></div></div>
+    <div class="coach rv d2"><div class="cav">👩‍💻</div><div class="cbo"><div class="cn">Programming Lead</div><div class="cr">Autonomous &amp; Coding</div><div class="csp">Python · C++</div></div></div>
+    <div class="coach rv d3"><div class="cav">🔧</div><div class="cbo"><div class="cn">Build Coach</div><div class="cr">Mechanical Engineering</div><div class="csp">CAD · 3D Print</div></div></div>
+    <div class="coach rv d4"><div class="cav">💡</div><div class="cbo"><div class="cn">Innovate Lead</div><div class="cr">Capstone &amp; Robot for Good</div><div class="csp">Community Impact</div></div></div>
   </div>
   <div style="margin-top:20px;text-align:center;">
     <a href="https://www.blazeroboticsacademy.org/blaze-team" class="btn btn-ghost">Meet the Full Team →</a>
   </div>
 </section>
 
+<!-- LOCATIONS -->
 <section class="sec bg-off">
   <div class="rv"><div class="lbl">Find Us</div><div class="h2">Four Locations Across<br>the Eastside</div></div>
   <div class="llg">
@@ -264,22 +364,23 @@ footer{background:var(--blue-dk);color:white;padding:52px 52px 30px;}
   <div style="margin-top:18px;text-align:center;font-size:14px;color:var(--gray);">📞 425-610-8618 &nbsp;·&nbsp; ✉️ info@blazeroboticsacademy.org</div>
 </section>
 
+<!-- FAQ -->
 <section class="sec bg-white" id="faqs">
   <div class="rv"><div class="lbl">Common Questions</div><div class="h2">Frequently Asked Questions</div></div>
   <div class="faqlist">
-    <div class="faqitem rv d1"><div class="faqq" onclick="this.parentElement.classList.toggle('open')">What is the difference between Blaze and Ignite? <span class="arr">▾</span></div><div class="faqa">Blaze Robotics Academy is the training academy — where students learn robotics, coding, engineering, and competition skills at all levels. Ignite Robotics is the elite competitive club where advanced students compete at regional, state, national, and world levels. They are partner organizations with a shared pipeline.</div></div>
-    <div class="faqitem rv d2"><div class="faqq" onclick="this.parentElement.classList.toggle('open')">Does my child have to compete? <span class="arr">▾</span></div><div class="faqa">Not at all. Competition is never required at Blaze. Many of our students love robotics as a creative and intellectual pursuit — building, designing, and making things they're proud of. Our courses, membership programs, and camps are fully available to students with no interest in competition.</div></div>
-    <div class="faqitem rv d3"><div class="faqq" onclick="this.parentElement.classList.toggle('open')">What age or grade does Blaze accept? <span class="arr">▾</span></div><div class="faqa">We serve students from Kindergarten through Grade 12. Different programs have different grade requirements. Contact us to find the right fit for your child's age and experience level.</div></div>
-    <div class="faqitem rv d4"><div class="faqq" onclick="this.parentElement.classList.toggle('open')">Does my child need prior robotics experience? <span class="arr">▾</span></div><div class="faqa">Not at all. Most students start with zero experience. Our RoboQuests course (K–3) and Ignite Curiosity programs are designed specifically for complete beginners. Our coaches meet students exactly where they are.</div></div>
-    <div class="faqitem rv d5"><div class="faqq" onclick="this.parentElement.classList.toggle('open')">How do students get onto a competition team? <span class="arr">▾</span></div><div class="faqa">Students must complete our Competition Prep course before joining a competition team. This is a firm requirement — it ensures every team member arrives at their first tournament ready to compete. After completing prep, eligible students can join the next available team.</div></div>
-    <div class="faqitem rv d6"><div class="faqq" onclick="this.parentElement.classList.toggle('open')">Do you offer financial assistance or sibling discounts? <span class="arr">▾</span></div><div class="faqa">Please contact us directly at info@blazeroboticsacademy.org or call 425-610-8618. We're committed to making Blaze accessible and are happy to talk through what's possible for your family.</div></div>
+    <div class="faqitem rv d1"><div class="faqq" onclick="this.parentElement.classList.toggle('open')">Is Blaze focused on competition or on learning? <span class="arr">▾</span></div><div class="faqa">Both — but in that order. We focus on building genuine engineering skills, design thinking habits, and strong team dynamics. Competition is one way to apply and test that foundation, and our results show what it produces. But plenty of our students pursue the Innovate track, recreational courses, or membership programs with no interest in competing at all.</div></div>
+    <div class="faqitem rv d2"><div class="faqq" onclick="this.parentElement.classList.toggle('open')">What is design thinking, and why does Blaze emphasise it? <span class="arr">▾</span></div><div class="faqa">Design thinking is a problem-solving framework used by engineers, product designers, and innovators worldwide: empathize with users, define the problem clearly, ideate without limits, prototype fast, and iterate until it works. We embed this in every program because students who think this way become better engineers — and more adaptable, creative people — regardless of whether they end up in robotics, medicine, business, or anything else.</div></div>
+    <div class="faqitem rv d3"><div class="faqq" onclick="this.parentElement.classList.toggle('open')">Does my child have to compete? <span class="arr">▾</span></div><div class="faqa">Not at all. Competition is never required at Blaze. Many students love robotics as a creative and intellectual pursuit with no interest in tournaments. Our courses, membership programs, camps, and Innovate track are fully available to students who want to learn, build, and create — without the competitive track.</div></div>
+    <div class="faqitem rv d4"><div class="faqq" onclick="this.parentElement.classList.toggle('open')">What is the difference between Blaze and Ignite? <span class="arr">▾</span></div><div class="faqa">Blaze Robotics Academy is the training academy — where students at all levels build engineering skills, design thinking habits, and soft skills through structured programs. Ignite Robotics is the elite competitive club where advanced students go on to compete at regional, state, national, and world levels. They are partner organisations — Blaze is the foundation that Ignite athletes build on.</div></div>
+    <div class="faqitem rv d5"><div class="faqq" onclick="this.parentElement.classList.toggle('open')">How do students get onto a competition team? <span class="arr">▾</span></div><div class="faqa">Students must complete our Competition Prep course before joining a competition team. This ensures every team member genuinely understands the engineering behind their robot — not just how to operate it — and can function as part of a high-performing team under tournament pressure.</div></div>
+    <div class="faqitem rv d6"><div class="faqq" onclick="this.parentElement.classList.toggle('open')">What does my child need to know before starting? <span class="arr">▾</span></div><div class="faqa">Nothing at all. Every Blaze student starts somewhere — usually with curiosity and zero prior experience. Our Ignite Curiosity programs and RoboQuests courses are designed specifically for complete beginners. Our coaches are trained to meet students exactly where they are and build from there.</div></div>
   </div>
 </section>
 
 <section class="sec bg-off">
   <div style="background:linear-gradient(135deg,var(--blue-dk),var(--blue));border-radius:20px;padding:50px;text-align:center;position:relative;overflow:hidden;" class="rv">
-    <h2 style="font-size:clamp(24px,4vw,42px);font-weight:800;color:white;margin-bottom:12px;">Ready to Join Blaze?</h2>
-    <p style="font-size:15px;color:rgba(255,255,255,.6);max-width:400px;margin:0 auto 24px;">Book a free trial class or reach out — we'd love to help you find the right program, whatever your child's interest level.</p>
+    <h2 style="font-size:clamp(24px,4vw,42px);font-weight:800;color:white;margin-bottom:12px;">Ready to Build the Foundation?</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,.6);max-width:440px;margin:0 auto 26px;">Book a free trial class — all experience levels welcome. See what design thinking + engineering excellence looks like from day one.</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
       <a href="https://app.amilia.com/store/en/blazeroboticsacademy/shop/programs" class="btn btn-red">Book a Free Trial Class</a>
       <a href="https://www.blazeroboticsacademy.org/contact-us" class="btn btn-out-w">Contact Us</a>
@@ -287,12 +388,11 @@ footer{background:var(--blue-dk);color:white;padding:52px 52px 30px;}
   </div>
 </section>
 
-
 <footer>
   <div class="fg">
     <div>
       <div class="fn">Blaze <em>Robotics</em></div>
-      <div class="fd">Elite robotics training for grades K–12. The academy behind Ignite's world-championship teams. Four Eastside locations.</div>
+      <div class="fd">Engineering excellence for grades K–12. Design thinking, real skills, and meaningful outcomes — whether on the competition floor or in the community.</div>
       <div class="fs">
         <a href="https://www.facebook.com/BlazeEdu/" class="fsc">fb</a>
         <a href="https://www.instagram.com/blaze_robotics/" class="fsc">ig</a>
@@ -302,10 +402,12 @@ footer{background:var(--blue-dk);color:white;padding:52px 52px 30px;}
     <div class="fc"><div class="fch">Your Journey</div>
       <a href="ignite.html">Ignite Curiosity</a>
       <a href="build.html">Build Mastery</a>
-      <a href="create.html">Create &amp; Compete</a>
+      <a href="compete.html">Compete</a>
+      <a href="innovate.html">Innovate</a>
     </div>
     <div class="fc"><div class="fch">About</div>
       <a href="about.html">Our Story</a>
+      <a href="about.html#approach">Our Approach</a>
       <a href="about.html#ignite">Ignite Partnership</a>
       <a href="about.html#faqs">FAQs</a>
       <a href="https://www.blazeroboticsacademy.org/contact-us">Contact Us</a>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Home — Blaze Robotics Academy</title>
+<title>Innovate — Blaze Robotics Academy</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -120,197 +120,78 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
   .fg{grid-template-columns:1fr 1fr;gap:32px;}
 }
 
-/* HERO — dark royal with gold accent */
-.hero{min-height:94vh;display:grid;grid-template-columns:1fr 1fr;
-  background:linear-gradient(135deg,#0a1140 0%,var(--blue-dk) 60%,var(--blue) 100%);
-  position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;
-  border-radius:50%;background:rgba(220,74,10,.12);}
-.hero::after{content:'';position:absolute;bottom:-80px;left:25%;width:400px;height:400px;
-  border-radius:50%;background:rgba(255,255,255,.04);}
-.hero-left{padding:130px 60px 70px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;}
-.hero-right{position:relative;z-index:2;padding:130px 50px 70px 0;display:flex;flex-direction:column;justify-content:center;}
-
-.est-badge{display:inline-flex;align-items:center;gap:8px;
-  background:rgba(220,74,10,.95);color:white;
-  font-family:var(--display);font-size:14px;font-weight:800;
-  text-transform:uppercase;letter-spacing:2.5px;
-  padding:7px 18px;border-radius:4px;margin-bottom:22px;width:fit-content;}
-.est-badge::before{content:'⚡';font-size:14px;}
-
-.hero h1{font-family:var(--display);font-size:clamp(72px,9vw,128px);font-weight:900;
-  line-height:.86;color:white;margin-bottom:20px;letter-spacing:-2px;}
-.hero h1 .dot{color:var(--gold-lt);}
-.hero h1 .lined{position:relative;display:inline-block;}
-.hero h1 .lined::after{content:'';position:absolute;left:0;right:0;bottom:-10px;height:8px;background:var(--gold-lt);}
-
-.hero-tagline{font-family:var(--display);font-size:clamp(20px,2vw,26px);font-weight:700;
-  color:var(--gold-lt);letter-spacing:1px;margin-bottom:24px;text-transform:uppercase;}
-.hero-sub{font-size:19px;color:rgba(255,255,255,.78);line-height:1.6;
-  max-width:480px;margin-bottom:32px;font-weight:500;}
+.hero-pg{min-height:62vh;display:flex;align-items:center;padding:140px 60px 80px;position:relative;overflow:hidden;}
+.hero-pg::before{content:'';position:absolute;top:-80px;right:-80px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.04);}
+.hero-pg::after{content:'';position:absolute;bottom:-60px;left:25%;width:360px;height:360px;border-radius:50%;background:rgba(0,0,0,.1);}
+.hc{position:relative;z-index:2;max-width:760px;}
+.step-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:4px;padding:7px 18px;font-family:var(--display);font-size:13px;font-weight:800;color:white;text-transform:uppercase;letter-spacing:2.5px;margin-bottom:24px;}
+.hero-pg h1{font-family:var(--display);font-size:clamp(52px,8vw,96px);font-weight:900;line-height:.88;color:white;margin-bottom:22px;text-transform:uppercase;letter-spacing:-1.5px;}
+.hero-pg h1 em{color:var(--gold-lt);font-style:normal;display:block;}
+.hero-pg h1 .lined{position:relative;display:inline-block;}
+.hero-pg h1 .lined::after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:7px;background:var(--gold-lt);}
+.hero-sub{font-size:19px;color:rgba(255,255,255,.78);line-height:1.65;max-width:560px;margin-bottom:30px;font-weight:500;}
 .hero-acts{display:flex;gap:14px;flex-wrap:wrap;}
+.hero-note{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:16px 22px;display:flex;align-items:center;gap:12px;margin-top:30px;max-width:600px;}
+.hero-note-ico{font-size:22px;flex-shrink:0;}
+.hero-note-txt{font-size:15px;color:rgba(255,255,255,.78);line-height:1.6;font-weight:500;}
 
-.hstats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px;max-width:440px;}
-.hst{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
-  border-radius:6px;padding:18px 20px;}
-.hst-n{font-family:var(--display);font-size:36px;font-weight:900;color:white;line-height:1;}
-.hst-n em{color:var(--gold-lt);font-style:normal;}
-.hst-l{font-family:var(--display);font-size:13px;font-weight:700;text-transform:uppercase;
-  letter-spacing:2px;color:rgba(255,255,255,.6);margin-top:6px;}
+.hero-in{background:linear-gradient(135deg,#042027,#063a3c 40%,var(--teal) 90%,#15ae8a);min-height:78vh;}
+.hero-in .step-badge{background:rgba(224,184,74,.18);border-color:rgba(224,184,74,.4);color:var(--gold-lt);}
+.hero-quote{background:rgba(255,255,255,.12);border-left:4px solid var(--gold-lt);border-radius:0 6px 6px 0;padding:20px 24px;margin-top:32px;max-width:560px;font-family:var(--display);font-size:18px;color:rgba(255,255,255,.85);line-height:1.4;font-weight:700;text-transform:uppercase;letter-spacing:-.3px;}
 
-/* RIGHT SIDE — 4 pillar cards */
-.pillars-stack{display:flex;flex-direction:column;gap:14px;width:100%;}
-.pillar-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);
-  border-radius:6px;padding:22px 24px;border-left:5px solid var(--blue-md);
-  transition:background .2s;}
-.pillar-card:hover{background:rgba(255,255,255,.13);}
-.pillar-card.gold{border-left-color:var(--gold-lt);background:rgba(220,180,80,.1);}
-.pc-icon{font-family:var(--display);font-size:13px;font-weight:800;
-  color:var(--gold-lt);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
-.pc-title{font-family:var(--display);font-size:22px;font-weight:900;color:white;
-  text-transform:uppercase;letter-spacing:-.5px;margin-bottom:6px;line-height:1;}
-.pc-desc{font-size:14px;color:rgba(255,255,255,.65);line-height:1.55;font-weight:500;}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.why-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.wc{background:white;border:1px solid var(--border);border-radius:8px;padding:24px 22px;border-top:4px solid var(--teal);}
+.wc-ico{font-size:30px;margin-bottom:10px;line-height:1;}
+.wc-t{font-family:var(--display);font-size:18px;font-weight:900;color:var(--dark);text-transform:uppercase;letter-spacing:-.3px;margin-bottom:6px;line-height:1;}
+.wc-d{font-size:14px;color:var(--gray-dk);line-height:1.6;font-weight:500;}
 
-/* THREE PILLARS */
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
-.pillar{background:white;border:1px solid var(--border);border-radius:8px;
-  padding:36px 30px;text-align:center;border-top:5px solid var(--blue);
-  transition:transform .2s,box-shadow .2s;position:relative;}
-.pillar:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(15,38,112,.12);}
-.pillar.p2{border-top-color:var(--red);}
-.pillar.p3{border-top-color:var(--gold);}
-.pillar-num{font-family:var(--display);font-size:14px;font-weight:800;letter-spacing:3px;
-  color:var(--gray-lt);text-transform:uppercase;margin-bottom:10px;}
-.pillar-icon{font-size:48px;margin-bottom:14px;line-height:1;}
-.pillar-title{font-family:var(--display);font-size:28px;font-weight:900;color:var(--dark);
-  text-transform:uppercase;letter-spacing:-.5px;margin-bottom:12px;line-height:1;}
-.pillar-desc{font-size:15px;color:var(--gray-dk);line-height:1.7;}
-.pillar-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;justify-content:center;}
-.ptag{font-family:var(--display);font-size:11px;font-weight:700;padding:5px 12px;
-  border-radius:3px;background:var(--off);color:var(--gray-dk);border:1px solid var(--border);
-  text-transform:uppercase;letter-spacing:1.2px;}
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px;}
+.prog{background:white;border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column;}
+.prog:hover{box-shadow:0 8px 32px rgba(13,115,119,.14);transform:translateY(-5px);}
+.prog-h{padding:28px 24px;}
+.ph1{background:linear-gradient(135deg,#042027,var(--teal));}
+.ph2{background:linear-gradient(135deg,var(--blue-dk),var(--blue));}
+.ph3{background:linear-gradient(135deg,#6b4a00,var(--gold));}
+.prog-ico{font-size:34px;margin-bottom:12px;line-height:1;}
+.prog-badge{display:inline-block;font-family:var(--display);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;padding:4px 11px;border-radius:3px;background:rgba(255,255,255,.2);color:white;margin-bottom:10px;}
+.prog-title{font-family:var(--display);font-size:26px;font-weight:900;color:white;text-transform:uppercase;letter-spacing:-.7px;margin-bottom:5px;line-height:1;}
+.prog-sub{font-family:var(--display);font-size:13px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1.5px;}
+.prog-body{padding:22px 24px;flex:1;}
+.prog-desc{font-size:14.5px;color:var(--gray-dk);line-height:1.65;margin-bottom:16px;font-weight:500;}
+.prog-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.prog-list li{font-size:14px;color:var(--gray-dk);display:flex;gap:10px;line-height:1.5;font-weight:500;}
+.prog-list li::before{content:'▸';color:var(--teal);font-size:12px;flex-shrink:0;margin-top:3px;}
+.prog-foot{padding:0 24px 22px;display:flex;gap:10px;}
 
-/* JOURNEY */
-.jgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px;}
-.jcard{border-radius:8px;border:1px solid var(--border);background:white;overflow:hidden;
-  transition:box-shadow .2s,transform .2s;text-decoration:none;display:flex;flex-direction:column;}
-.jcard:hover{box-shadow:0 8px 32px rgba(26,63,168,.14);transform:translateY(-5px);}
-.jcard-stripe{height:6px;}
-.s1{background:var(--blue-md);}.s2{background:var(--red);}
-.s3{background:var(--gold);}.s4{background:var(--teal);}
-.jcard-body{padding:28px 22px;flex:1;}
-.jcard-step{font-family:var(--display);font-size:12px;font-weight:800;letter-spacing:3px;
-  text-transform:uppercase;color:var(--gray-lt);margin-bottom:14px;}
-.jcard-ico{font-size:42px;margin-bottom:14px;line-height:1;}
-.jcard-title{font-family:var(--display);font-size:24px;font-weight:900;color:var(--dark);
-  text-transform:uppercase;letter-spacing:-.5px;margin-bottom:10px;line-height:1;}
-.jcard-desc{font-size:14.5px;color:var(--gray-dk);line-height:1.6;margin-bottom:16px;}
-.jcard-link{font-family:var(--display);font-size:13px;font-weight:800;color:var(--blue);
-  text-transform:uppercase;letter-spacing:1.5px;}
-.jcard-link.teal{color:var(--teal);}
-.jcard-foot{padding:14px 22px;border-top:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;}
-.jcard-foot span{font-family:var(--display);font-size:11px;font-weight:700;color:var(--gray-dk);
-  padding:5px 12px;border-radius:3px;background:var(--off);
-  text-transform:uppercase;letter-spacing:1.2px;}
+.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px;}
+.ic{background:white;border:1px solid var(--border);border-radius:8px;padding:26px 22px;border-top:4px solid var(--teal);transition:box-shadow .2s,transform .2s;}
+.ic:hover{box-shadow:0 6px 22px rgba(13,115,119,.12);transform:translateY(-3px);}
+.ic-ico{font-size:30px;margin-bottom:12px;line-height:1;}
+.ic-t{font-family:var(--display);font-size:18px;font-weight:900;color:var(--dark);text-transform:uppercase;letter-spacing:-.3px;margin-bottom:8px;line-height:1;}
+.ic-d{font-size:14px;color:var(--gray-dk);line-height:1.6;font-weight:500;}
+.ic-tag{display:inline-block;margin-top:12px;font-family:var(--display);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--teal);background:var(--teal-dim);border-radius:3px;padding:4px 11px;}
 
-/* PHILOSOPHY */
-.phil{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-.phil-quote{font-family:var(--display);font-size:clamp(32px,3.5vw,46px);font-weight:900;
-  color:var(--dark);line-height:1;border-left:6px solid var(--red);padding-left:28px;
-  margin-bottom:28px;text-transform:uppercase;letter-spacing:-1px;}
-.phil-quote em{color:var(--blue);font-style:normal;}
-.phil-body{font-size:17px;color:var(--gray-dk);line-height:1.75;font-weight:500;}
-.phil-items{display:flex;flex-direction:column;gap:20px;}
-.pi{display:flex;gap:18px;align-items:flex-start;}
-.pi-ico{width:54px;height:54px;border-radius:6px;display:flex;align-items:center;
-  justify-content:center;font-size:24px;flex-shrink:0;}
-.pi-blue{background:var(--blue-lt);}.pi-red{background:#fee8e0;}
-.pi-gold{background:#fdf3dc;}.pi-teal{background:var(--teal-dim);}
-.pi-h{font-family:var(--display);font-size:20px;font-weight:900;color:var(--dark);
-  text-transform:uppercase;letter-spacing:-.5px;margin-bottom:6px;line-height:1.05;}
-.pi-d{font-size:14.5px;color:var(--gray-dk);line-height:1.65;}
+.process{display:flex;flex-direction:column;gap:0;max-width:780px;margin:56px auto 0;}
+.ps{display:flex;gap:24px;padding:26px 0;border-bottom:1px solid var(--border);}
+.ps:last-child{border-bottom:none;}
+.ps-num{font-family:var(--display);font-size:48px;font-weight:900;color:rgba(13,115,119,.18);min-width:60px;line-height:1;padding-top:2px;}
+.ps-h{font-family:var(--display);font-size:20px;font-weight:900;color:var(--dark);text-transform:uppercase;letter-spacing:-.3px;margin-bottom:7px;line-height:1.05;}
+.ps-d{font-size:15px;color:var(--gray-dk);line-height:1.65;font-weight:500;}
 
-/* SKILLS */
-.skills-wrap{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:32px;}
-.skill-group{background:white;border:1px solid var(--border);border-radius:8px;padding:36px 30px;}
-.sg-label{font-family:var(--display);font-size:16px;font-weight:800;text-transform:uppercase;
-  letter-spacing:2.5px;margin-bottom:24px;display:flex;align-items:center;gap:12px;}
-.sg-label::before{content:'';display:block;width:36px;height:4px;background:currentColor;}
-.sg-blue{color:var(--blue);}.sg-red{color:var(--red);}
-.skill-chips{display:flex;flex-wrap:wrap;gap:10px;}
-.sc{display:flex;align-items:center;gap:8px;background:var(--off);border:1px solid var(--border);
-  border-radius:4px;padding:10px 16px;font-family:var(--display);font-size:14px;font-weight:700;
-  color:var(--dark);text-transform:uppercase;letter-spacing:1px;}
-.sc.cb{border-left:4px solid var(--blue);}.sc.cr{border-left:4px solid var(--red);}
+.interest-box{background:linear-gradient(135deg,#042027,#063a3c,var(--teal));border-radius:12px;padding:64px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative;overflow:hidden;}
+.interest-box::before{content:'';position:absolute;right:-60px;top:-60px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.06);}
+.interest-box::after{content:'';position:absolute;bottom:0;left:0;right:0;height:6px;background:var(--gold);}
+.interest-box h2{font-family:var(--display);font-size:clamp(32px,4.5vw,52px);font-weight:900;color:white;margin-bottom:14px;text-transform:uppercase;letter-spacing:-1px;line-height:1;position:relative;z-index:1;}
+.interest-box p{font-size:17px;color:rgba(255,255,255,.7);max-width:480px;line-height:1.6;font-weight:500;position:relative;z-index:1;}
+.ib-acts{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1;flex-shrink:0;}
 
-/* PROOF */
-.proof{background:linear-gradient(135deg,#0a1140,var(--blue-dk));border-radius:12px;
-  padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
-  position:relative;overflow:hidden;}
-.proof::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;
-  border-radius:50%;background:rgba(200,154,46,.08);}
-.proof-text{position:relative;z-index:1;}
-.proof-text h3{font-family:var(--display);font-size:clamp(28px,3vw,42px);font-weight:900;
-  color:white;margin-bottom:18px;line-height:1;text-transform:uppercase;letter-spacing:-1px;}
-.proof-text h3 em{color:var(--gold-lt);font-style:normal;}
-.proof-text p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:22px;font-weight:500;}
-.proof-note{font-size:13px;color:rgba(255,255,255,.4);font-style:italic;font-weight:500;}
-.proof-results{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1;}
-.pr{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-  border-radius:6px;padding:16px 20px;}
-.pr-yr{font-family:var(--display);font-size:12px;font-weight:800;text-transform:uppercase;
-  letter-spacing:2px;color:rgba(255,255,255,.5);margin-bottom:5px;}
-.pr-r{font-family:var(--display);font-size:18px;font-weight:900;color:white;text-transform:uppercase;letter-spacing:-.3px;line-height:1.05;}
-.pr.gold{background:rgba(200,154,46,.15);border-color:rgba(200,154,46,.32);}
-.pr.gold .pr-r{color:var(--gold-lt);}
-
-/* TESTIMONIALS */
-.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px;}
-.tcard{background:white;border:1px solid var(--border);border-radius:8px;
-  padding:30px 26px;border-top:4px solid var(--blue);transition:transform .2s;}
-.tcard:hover{transform:translateY(-3px);}
-.tcard.r{border-top-color:var(--red);}
-.tcard.g{border-top-color:var(--gold);}
-.tq{font-size:16px;color:var(--gray-dk);line-height:1.7;margin-bottom:22px;font-style:italic;font-weight:500;}
-.ta{display:flex;align-items:center;gap:12px;}
-.tav{width:42px;height:42px;border-radius:50%;background:var(--blue-lt);
-  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-.tn{font-family:var(--display);font-size:16px;font-weight:800;color:var(--dark);text-transform:uppercase;letter-spacing:0;}
-.tr{font-family:var(--display);font-size:12px;font-weight:700;color:var(--gray);
-  text-transform:uppercase;letter-spacing:1.5px;margin-top:2px;}
-
-/* LOCATIONS */
-.lgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px;}
-.lc{background:white;border:1px solid var(--border);border-radius:8px;overflow:hidden;
-  transition:box-shadow .2s,transform .2s;}
-.lc:hover{box-shadow:0 6px 24px rgba(26,63,168,.12);transform:translateY(-4px);}
-.lch{background:linear-gradient(135deg,var(--blue-dk),var(--blue));padding:20px 22px;border-bottom:3px solid var(--gold);}
-.lcn{font-family:var(--display);font-size:24px;font-weight:900;color:white;text-transform:uppercase;letter-spacing:-.5px;}
-.lcb{padding:18px 22px;}
-.lca{font-size:14.5px;color:var(--gray-dk);line-height:1.6;margin-bottom:10px;font-weight:500;}
-.lct{font-family:var(--display);font-size:11px;font-weight:800;text-transform:uppercase;
-  letter-spacing:2px;color:var(--blue);}
-
-/* CTA */
-.cta-banner{background:linear-gradient(135deg,#0a1140,var(--blue-dk),var(--blue));
-  border-radius:12px;padding:64px;display:grid;grid-template-columns:1fr auto;gap:40px;
-  align-items:center;position:relative;overflow:hidden;}
-.cta-banner::before{content:'';position:absolute;right:-60px;top:-60px;width:320px;height:320px;
-  border-radius:50%;background:rgba(220,74,10,.15);}
-.cta-banner::after{content:'';position:absolute;bottom:0;left:0;right:0;height:6px;background:var(--gold);}
-.cta-banner h2{font-family:var(--display);font-size:clamp(32px,4.5vw,56px);font-weight:900;
-  color:white;margin-bottom:14px;text-transform:uppercase;letter-spacing:-1px;line-height:1;}
-.cta-banner p{font-size:17px;color:rgba(255,255,255,.7);max-width:480px;line-height:1.65;font-weight:500;}
-.cta-acts{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1;flex-shrink:0;}
+.also-comp{background:var(--blue-xlt);border:2px solid rgba(26,63,168,.22);border-radius:10px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-top:18px;}
 
 @media(max-width:960px){
-  .hero{grid-template-columns:1fr;min-height:auto;}
-  .hero-right{padding:0 30px 64px;}
-  .hero-left{padding:110px 24px 36px;}
-  .pillars,.jgrid{grid-template-columns:1fr 1fr;}
-  .phil,.skills-wrap,.tgrid,.proof{grid-template-columns:1fr;}
-  .lgrid{grid-template-columns:1fr 1fr;}
-  .cta-banner{grid-template-columns:1fr;padding:48px 28px;}
+  .hero-pg{padding:110px 24px 60px;}
+  .why-grid,.why-cards,.prog-grid,.impact-grid{grid-template-columns:1fr;}
+  .interest-box{grid-template-columns:1fr;padding:48px 28px;}
 }
 </style>
 </head>
@@ -324,306 +205,159 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
     </div>
   </a>
   <button class="hbg">&#9776;</button>
-  <div class="nl"><a href="index.html" class="on">Home</a>
+  <div class="nl"><a href="index.html" class="">Home</a>
     <a href="ignite.html" class="">Ignite Curiosity</a>
     <a href="build.html" class="">Build Mastery</a>
     <a href="compete.html" class="">Compete</a>
-    <a href="innovate.html" class="">Innovate</a>
+    <a href="innovate.html" class="on-innovate">Innovate</a>
     <a href="about.html" class="">About</a></div>
   <a href="https://app.amilia.com/store/en/blazeroboticsacademy/shop/programs" class="enroll">Enroll Now</a>
 </nav>
 
-<section class="hero">
-  <div class="hero-left">
-    <div class="est-badge">Est. 2004 · World Champions Pipeline</div>
-    <h1>Build<span class="dot">.</span><br>Think<span class="dot">.</span><br><span class="lined">Lead<span class="dot">.</span></span></h1>
-    <div class="hero-tagline">Engineering Excellence × Design Thinking</div>
-    <p class="hero-sub">Blaze Robotics Academy develops the next generation of engineers, innovators, and leaders. From first-time builders to world-stage competitors — the foundation we build is the same.</p>
+<section class="hero-pg hero-in">
+  <div class="hc">
+    <div class="step-badge">💡 Track B · After Build Mastery</div>
+    <h1>Innovate.<br><span class="lined">Robot for Good.</span></h1>
+    <p class="hero-sub">For students who want to use what they've learned to solve real problems. Capstone engineering projects, community challenges, and initiatives that show the world what robotics can do beyond the game field.</p>
     <div class="hero-acts">
-      <a href="ignite.html" class="btn btn-red btn-lg">Start Your Journey</a>
-      <a href="build.html" class="btn btn-out-w btn-lg">Explore Programs</a>
+      <a href="https://www.blazeroboticsacademy.org/contact-us" class="btn btn-gold btn-lg">Express Interest</a>
+      <a href="build.html" class="btn btn-out-w btn-lg">← Build Mastery First</a>
     </div>
-    <div class="hstats">
-      <div class="hst"><div class="hst-n">K<em>–</em>12</div><div class="hst-l">All Grades</div></div>
-      <div class="hst"><div class="hst-n">4</div><div class="hst-l">Locations</div></div>
-      <div class="hst"><div class="hst-n">20<em>+</em></div><div class="hst-l">Years</div></div>
-      <div class="hst"><div class="hst-n">5<em>×</em></div><div class="hst-l">Days / Week</div></div>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="pillars-stack">
-      <div class="pillar-card">
-        <div class="pc-icon">▸ Pillar 01</div>
-        <div class="pc-title">Design Thinking</div>
-        <div class="pc-desc">Identify problems, prototype solutions, iterate until it works — the engineering mindset applied to everything.</div>
-      </div>
-      <div class="pillar-card">
-        <div class="pc-icon">▸ Pillar 02</div>
-        <div class="pc-title">Engineering Excellence</div>
-        <div class="pc-desc">Real robots, real code, real CAD. Students build skills that matter in college, careers, and life.</div>
-      </div>
-      <div class="pillar-card">
-        <div class="pc-icon">▸ Pillar 03</div>
-        <div class="pc-title">Soft Skills That Stick</div>
-        <div class="pc-desc">Collaboration, communication, leadership, and critical thinking — built into every session.</div>
-      </div>
-      <div class="pillar-card gold">
-        <div class="pc-icon">★ Proof</div>
-        <div class="pc-title">Results Follow the Foundation</div>
-        <div class="pc-desc">Do things right and winning takes care of itself. Partner academy to Ignite — 2026 VEX World Champions.</div>
-      </div>
-    </div>
+    <div class="hero-quote">"The best engineers don't just win tournaments — they build things that matter."</div>
   </div>
 </section>
 
-<div class="ticker">
-  <span class="hi">⚙️ Design Thinking · Engineering Excellence · Soft Skills</span>
-  <span class="sp">|</span><span>📍 Bellevue · Bel-Red · Sammamish · Issaquah</span>
-  <span class="sp">|</span><span>💡 Compete Track &amp; Innovate Track</span>
-  <span class="sp">|</span><span>🎓 Grades K–12 · All Levels</span>
+<div class="ticker" style="background:var(--teal);">
+  <span class="hi">💡 Capstone Engineering Projects</span>
+  <span class="sp">|</span><span>🌍 Robot for Good · Community Impact</span>
+  <span class="sp">|</span><span>🎤 Showcase · Pitch · Present</span>
+  <span class="sp">|</span><span>🔗 Track B · Open After Build Mastery</span>
 </div>
 
-<!-- THREE PILLARS -->
-<section class="sec bg-white">
-  <div class="rv">
-    <div class="lbl">What We Believe</div>
-    <div class="h2">Three Pillars.<br>Everything We Do.</div>
-    <p class="lead">These aren't values on a poster. They're how we structure every class, every project, and every season — for every student, at every level.</p>
-  </div>
-  <div class="pillars">
-    <div class="pillar rv d1">
-      <div class="pillar-num">01</div>
-      <div class="pillar-icon">🧠</div>
-      <div class="pillar-title">Design Thinking</div>
-      <div class="pillar-desc">We teach students to approach every challenge the way real engineers do — define the problem, empathize with users, ideate without limits, prototype fast, and iterate until it works.</div>
-      <div class="pillar-tags">
-        <span class="ptag">Problem Definition</span><span class="ptag">Prototyping</span>
-        <span class="ptag">Iteration</span><span class="ptag">User Empathy</span>
-      </div>
-    </div>
-    <div class="pillar p2 rv d2">
-      <div class="pillar-num">02</div>
-      <div class="pillar-icon">⚙️</div>
-      <div class="pillar-title">Engineering Excellence</div>
-      <div class="pillar-desc">Real VEX robotics kits. Real programming in Python and C++. Real 3D design tools. Real engineering notebooks. We hold our students to genuine technical standards.</div>
-      <div class="pillar-tags">
-        <span class="ptag">VEX Robotics</span><span class="ptag">Coding</span>
-        <span class="ptag">3D Design</span><span class="ptag">Systems Thinking</span>
-      </div>
-    </div>
-    <div class="pillar p3 rv d3">
-      <div class="pillar-num">03</div>
-      <div class="pillar-icon">🌟</div>
-      <div class="pillar-title">Soft Skills That Last</div>
-      <div class="pillar-desc">Every robot is built by a team. Every project requires communication. Every setback demands resilience. These aren't side effects of robotics — they're the whole point.</div>
-      <div class="pillar-tags">
-        <span class="ptag">Leadership</span><span class="ptag">Collaboration</span>
-        <span class="ptag">Communication</span><span class="ptag">Critical Thinking</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- JOURNEY -->
 <section class="sec bg-off">
-  <div class="rv">
-    <div class="lbl">The Blaze Journey</div>
-    <div class="h2">Four Stages.<br>One Solid Foundation.</div>
-    <p class="lead">Every student begins the same way — with curiosity and no prerequisites. The foundation we build is identical for everyone. Where you go from there is your call.</p>
-  </div>
-  <div class="jgrid">
-    <a href="ignite.html" class="jcard rv d1">
-      <div class="jcard-stripe s1"></div>
-      <div class="jcard-body">
-        <div class="jcard-step">Step 01</div>
-        <div class="jcard-ico">✨</div>
-        <div class="jcard-title">Ignite Curiosity</div>
-        <div class="jcard-desc">No experience needed. Discover what you love about building, creating, and solving problems. Try before you commit.</div>
-        <div class="jcard-link">Explore →</div>
-      </div>
-      <div class="jcard-foot">
-        <span>Trial Class</span><span>Membership</span>
-      </div>
-    </a>
-    <a href="build.html" class="jcard rv d2">
-      <div class="jcard-stripe s2"></div>
-      <div class="jcard-body">
-        <div class="jcard-step">Step 02</div>
-        <div class="jcard-ico">🛠️</div>
-        <div class="jcard-title">Build Mastery</div>
-        <div class="jcard-desc">Structured courses and camps. Engineering, coding, and design skills built through real curriculum — at every grade level.</div>
-        <div class="jcard-link">Programs →</div>
-      </div>
-      <div class="jcard-foot">
-        <span>Courses</span><span>Camps</span>
-      </div>
-    </a>
-    <a href="compete.html" class="jcard rv d3">
-      <div class="jcard-stripe s3"></div>
-      <div class="jcard-body">
-        <div class="jcard-step">Track A</div>
-        <div class="jcard-ico">🏆</div>
-        <div class="jcard-title">Compete</div>
-        <div class="jcard-desc">For students who want to test their engineering on the competition floor. Real tournaments, real growth under pressure.</div>
-        <div class="jcard-link">Join a Team →</div>
-      </div>
-      <div class="jcard-foot">
-        <span>Comp Prep</span><span>Teams</span>
-      </div>
-    </a>
-    <a href="innovate.html" class="jcard rv d4">
-      <div class="jcard-stripe s4"></div>
-      <div class="jcard-body">
-        <div class="jcard-step">Track B</div>
-        <div class="jcard-ico">💡</div>
-        <div class="jcard-title">Innovate</div>
-        <div class="jcard-desc">For students who want to apply engineering to real-world problems. Capstone projects and Robot for Good initiatives.</div>
-        <div class="jcard-link teal">Innovate →</div>
-      </div>
-      <div class="jcard-foot">
-        <span>Robot for Good</span><span>Capstone</span>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- PHILOSOPHY -->
-<section class="sec bg-white">
-  <div class="phil">
+  <div class="why-grid">
     <div class="rv">
-      <div class="lbl">Our Philosophy</div>
-      <div class="phil-quote">Do things right.<br><em>Results follow.</em></div>
-      <p class="phil-body">We don't chase trophies. We build engineers. We develop problem-solvers, communicators, and leaders. And then we send them into competitions, showcases, and communities — where they consistently show what that foundation produces.</p>
-      <p class="phil-body" style="margin-top:18px;">Our competitive results aren't accidental. They're the natural outcome of students who genuinely understand what they're building, why it works, and how to work together to make it better.</p>
-      <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
-        <a href="about.html#approach" class="btn btn-blue">Our Approach</a>
-        <a href="compete.html" class="btn btn-ghost">Competition Results</a>
-      </div>
+      <div class="lbl lbl-teal">Why Innovate Exists</div>
+      <div class="h2">Not Every Great<br>Engineer Competes.</div>
+      <p class="lead">The tournament floor is one measure of excellence. But some of the most powerful things our students will ever build won't happen in an arena — they'll happen in a community, a school, or a hospital. The Innovate track is where that ambition lives.</p>
+      <p class="lead" style="margin-top:16px;">Robotics skills — engineering, coding, systems thinking, communication — are exactly the tools needed to tackle real-world problems. This track teaches students to apply them with purpose.</p>
     </div>
-    <div class="phil-items rv d2">
-      <div class="pi">
-        <div class="pi-ico pi-blue">🧠</div>
-        <div><div class="pi-h">Teach the Why</div><div class="pi-d">Students who understand engineering principles can adapt when things change. That's the difference between training and education.</div></div>
-      </div>
-      <div class="pi">
-        <div class="pi-ico pi-red">🤝</div>
-        <div><div class="pi-h">No Robot Built Alone</div><div class="pi-d">Every project is a team project. Communication, conflict resolution, shared ownership — these are engineering requirements.</div></div>
-      </div>
-      <div class="pi">
-        <div class="pi-ico pi-gold">🔁</div>
-        <div><div class="pi-h">Failure Is the Curriculum</div><div class="pi-d">Robots break. Code crashes. Designs fail. We teach students to treat every failure as data — and every rebuild as progress.</div></div>
-      </div>
-      <div class="pi">
-        <div class="pi-ico pi-teal">🌍</div>
-        <div><div class="pi-h">Engineering Has Responsibility</div><div class="pi-d">The best engineers don't just win tournaments — they build things that matter. Our Innovate track exists because we believe that.</div></div>
-      </div>
+    <div class="why-cards rv d2">
+      <div class="wc"><div class="wc-ico">🌍</div><div class="wc-t">Real Impact</div><div class="wc-d">Projects address genuine community challenges — not simulated ones.</div></div>
+      <div class="wc"><div class="wc-ico">🎤</div><div class="wc-t">Pitch &amp; Present</div><div class="wc-d">Students learn to communicate solutions to real audiences.</div></div>
+      <div class="wc"><div class="wc-ico">🤝</div><div class="wc-t">Collaboration</div><div class="wc-d">Cross-disciplinary teamwork — engineering, design, storytelling.</div></div>
+      <div class="wc"><div class="wc-ico">📄</div><div class="wc-t">Portfolio Ready</div><div class="wc-d">A documented capstone project that stands out on college apps.</div></div>
     </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section class="sec bg-off">
-  <div class="rv">
-    <div class="lbl">What Students Build</div>
-    <div class="h2">Technical Skills<br>&amp; Human Skills.</div>
-    <p class="lead">Robotics is the platform. These are the real outcomes — built into every session, every project, every season.</p>
-  </div>
-  <div class="skills-wrap">
-    <div class="skill-group rv d1">
-      <div class="sg-label sg-blue">Technical Skills</div>
-      <div class="skill-chips">
-        <div class="sc cb">📐 Math &amp; Physics</div>
-        <div class="sc cb">⚙️ Mechanical Engineering</div>
-        <div class="sc cb">💻 Python &amp; C++</div>
-        <div class="sc cb">🎨 3D CAD Design</div>
-        <div class="sc cb">🤖 Robotics Programming</div>
-        <div class="sc cb">🔬 Systems Thinking</div>
-        <div class="sc cb">📋 Documentation</div>
-        <div class="sc cb">🔧 Prototyping</div>
-      </div>
-    </div>
-    <div class="skill-group rv d2">
-      <div class="sg-label sg-red">Human Skills</div>
-      <div class="skill-chips">
-        <div class="sc cr">👑 Leadership</div>
-        <div class="sc cr">🤝 Teamwork</div>
-        <div class="sc cr">💬 Communication</div>
-        <div class="sc cr">🧩 Problem Solving</div>
-        <div class="sc cr">🔍 Critical Thinking</div>
-        <div class="sc cr">🎭 Creativity</div>
-        <div class="sc cr">🎯 Grit</div>
-        <div class="sc cr">🌍 Social Impact</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="sec bg-off">
-  <div class="proof rv">
-    <div class="proof-text">
-      <h3>The Foundation<br>Produces <em>Results.</em></h3>
-      <p>We don't lead with trophies — but we don't hide them either. Our partner academy Ignite Robotics has produced some of the most decorated young engineers in the country. Our students are in that pipeline. These results are what the foundation produces.</p>
-      <a href="about.html#ignite" class="btn btn-out-w">Our Ignite Partnership</a>
-      <div class="proof-note" style="margin-top:16px;">Results belong to Ignite Robotics. Blaze is the training foundation that makes them possible.</div>
-    </div>
-    <div class="proof-results">
-      <div class="pr gold">
-        <div class="pr-yr">Ignite · VEX Worlds 2026 · High School</div>
-        <div class="pr-r">🏆 World Champions — Team 10B</div>
-      </div>
-      <div class="pr">
-        <div class="pr-yr">High School · Teams 10C, 10K, 10P, 10W, 917X</div>
-        <div class="pr-r">🔥 Division Finals · Top 16 Finishes</div>
-      </div>
-      <div class="pr">
-        <div class="pr-yr">Middle School · Teams 938A–938R</div>
-        <div class="pr-r">🥇 Innovate Awards · Alliance Finals</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="sec bg-white">
-  <div class="rv"><div class="lbl">Family Voices</div><div class="h2">The Outcomes<br>Parents Notice.</div></div>
-  <div class="tgrid">
-    <div class="tcard rv d1">
-      <div class="tq">"He came home and started solving his homework differently — breaking things down, testing approaches, iterating. He learned that from robotics."</div>
-      <div class="ta"><div class="tav">👨</div><div><div class="tn">David K.</div><div class="tr">Parent · Bellevue</div></div></div>
-    </div>
-    <div class="tcard r rv d2">
-      <div class="tq">"My daughter leads her team like she's been doing it for years. She listens, delegates, holds people accountable — at 11. Blaze did that."</div>
-      <div class="ta"><div class="tav">👩</div><div><div class="tn">Sarah L.</div><div class="tr">Parent · Sammamish</div></div></div>
-    </div>
-    <div class="tcard g rv d3">
-      <div class="tq">"He started in a trial class knowing nothing. Now he's on a competition team and running a Robot for Good project. The foundation Blaze built made both possible."</div>
-      <div class="ta"><div class="tav">👩</div><div><div class="tn">Michelle T.</div><div class="tr">Parent · Issaquah</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- LOCATIONS -->
-<section class="sec bg-off">
-  <div class="rv"><div class="lbl">Find Your Campus</div><div class="h2">Four Eastside Locations.</div></div>
-  <div class="lgrid">
-    <div class="lc rv d1"><div class="lch"><div class="lcn">Bellevue</div></div><div class="lcb"><div class="lca">1910 132nd Ave NE #7<br>Bellevue, WA 98005</div><div class="lct">Main Campus</div></div></div>
-    <div class="lc rv d2"><div class="lch"><div class="lcn">Bel-Red</div></div><div class="lcb"><div class="lca">12509 Bel-Red Rd #100<br>Bellevue, WA 98005</div><div class="lct">Eastside Hub</div></div></div>
-    <div class="lc rv d3"><div class="lch"><div class="lcn">Sammamish</div></div><div class="lcb"><div class="lca">2850 228th Ave SE B<br>Sammamish, WA 98075</div><div class="lct">East Campus</div></div></div>
-    <div class="lc rv d4"><div class="lch"><div class="lcn">Issaquah</div></div><div class="lcb"><div class="lca">1045 12th Ave NW #F-2<br>Issaquah, WA 98027</div><div class="lct">South Campus</div></div></div>
   </div>
 </section>
 
 <section class="sec bg-white">
-  <div class="cta-banner rv">
-    <div style="position:relative;z-index:1;">
-      <h2>Ready to Build<br>Something Real?</h2>
-      <p>Book a free trial class — all experience levels welcome. See what design thinking + engineering excellence looks like from day one.</p>
+  <div class="rv"><div class="lbl lbl-teal">Programs</div><div class="h2">Three Ways<br>to Innovate.</div><p class="lead">From structured capstone courses to community challenge competitions — there's a format for every student who wants to build something that matters.</p></div>
+  <div class="prog-grid">
+    <div class="prog rv d1">
+      <div class="prog-h ph1">
+        <div class="prog-ico">🤖</div>
+        <div class="prog-badge">Flagship Program</div>
+        <div class="prog-title">Robot for Good</div>
+        <div class="prog-sub">Community Challenge Initiative</div>
+      </div>
+      <div class="prog-body">
+        <div class="prog-desc">Students identify a real problem in their community and design a robotic or tech-driven solution. From concept to prototype to community presentation — end-to-end engineering with purpose.</div>
+        <ul class="prog-list">
+          <li>Problem identification &amp; research</li>
+          <li>Engineering design process</li>
+          <li>Prototype build and iteration</li>
+          <li>Community presentation &amp; impact report</li>
+          <li>Optional external showcase events</li>
+        </ul>
+      </div>
+      <div class="prog-foot"><a href="https://www.blazeroboticsacademy.org/contact-us" class="btn btn-teal">Express Interest</a></div>
     </div>
-    <div class="cta-acts">
-      <a href="https://app.amilia.com/store/en/blazeroboticsacademy/shop/programs" class="btn btn-red btn-lg">Book a Free Trial</a>
-      <a href="ignite.html" class="btn btn-out-w btn-lg">Explore All Programs</a>
+    <div class="prog rv d2">
+      <div class="prog-h ph2">
+        <div class="prog-ico">🎓</div>
+        <div class="prog-badge">Advanced Course</div>
+        <div class="prog-title">Capstone Engineering</div>
+        <div class="prog-sub">Independent Senior Project</div>
+      </div>
+      <div class="prog-body">
+        <div class="prog-desc">A structured independent project course where students define, design, build, test, and document their own engineering challenge from start to finish. The deepest technical track we offer.</div>
+        <ul class="prog-list">
+          <li>Self-directed project proposal &amp; scope</li>
+          <li>Weekly coach check-ins &amp; design reviews</li>
+          <li>Full engineering notebook documentation</li>
+          <li>Final build demo and presentation</li>
+          <li>College application portfolio support</li>
+        </ul>
+      </div>
+      <div class="prog-foot"><a href="https://www.blazeroboticsacademy.org/contact-us" class="btn btn-blue">Express Interest</a></div>
     </div>
+    <div class="prog rv d3">
+      <div class="prog-h ph3">
+        <div class="prog-ico">🏅</div>
+        <div class="prog-badge">Challenge Track</div>
+        <div class="prog-title">Innovation Showcase</div>
+        <div class="prog-sub">Present to Real Judges</div>
+      </div>
+      <div class="prog-body">
+        <div class="prog-desc">Students develop and present their innovation project to a panel of real engineers, educators, and community members. Pitch skills, design thinking, and public speaking — all in one track.</div>
+        <ul class="prog-list">
+          <li>Structured design thinking curriculum</li>
+          <li>Pitch deck and demo preparation</li>
+          <li>Mock judging and feedback sessions</li>
+          <li>Live showcase event with external judges</li>
+          <li>Recognition and awards for top projects</li>
+        </ul>
+      </div>
+      <div class="prog-foot"><a href="https://www.blazeroboticsacademy.org/contact-us" class="btn btn-gold">Express Interest</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-off">
+  <div class="rv"><div class="lbl lbl-teal">Project Ideas</div><div class="h2">What Might a<br>Robot for Good Look Like?</div><p class="lead">These are examples of the kinds of challenges Innovate students tackle. Every project starts with a student's own curiosity about a problem worth solving.</p></div>
+  <div class="impact-grid">
+    <div class="ic rv d1"><div class="ic-ico">♿</div><div class="ic-t">Accessibility Aid</div><div class="ic-d">A robotic arm attachment or navigation assistant designed to help people with limited mobility complete everyday tasks independently.</div><div class="ic-tag">Community Impact</div></div>
+    <div class="ic rv d2"><div class="ic-ico">🌱</div><div class="ic-t">Environmental Monitor</div><div class="ic-d">Sensor-equipped robots that collect local environmental data — air quality, soil health, water levels — to support community awareness.</div><div class="ic-tag">Environmental</div></div>
+    <div class="ic rv d3"><div class="ic-ico">📚</div><div class="ic-t">STEM Educator Robot</div><div class="ic-d">A teaching robot designed to introduce younger students to coding and engineering through interactive demonstrations.</div><div class="ic-tag">Education</div></div>
+    <div class="ic rv d1"><div class="ic-ico">🏥</div><div class="ic-t">Healthcare Helper</div><div class="ic-d">Robots designed to assist in low-resource healthcare settings — supply transport, patient communication aids.</div><div class="ic-tag">Healthcare</div></div>
+    <div class="ic rv d2"><div class="ic-ico">🛕</div><div class="ic-t">Cultural Preservation</div><div class="ic-d">Using robotics and 3D scanning to document and preserve artifacts, monuments, or cultural sites that are at risk of deterioration.</div><div class="ic-tag">Heritage</div></div>
+    <div class="ic rv d3"><div class="ic-ico">🍱</div><div class="ic-t">Food Access Solution</div><div class="ic-d">Automated systems to help local food banks or community fridges track inventory, reduce waste, and serve more people.</div><div class="ic-tag">Social Good</div></div>
+  </div>
+</section>
+
+<section class="sec bg-white">
+  <div class="rv"><div class="lbl lbl-teal">How It Works</div><div class="h2">The Innovate Process.</div><p class="lead">Every Innovate project follows a structured engineering design process — adapted so students at every level can succeed.</p></div>
+  <div class="process">
+    <div class="ps rv d1"><div class="ps-num">01</div><div><div class="ps-h">Identify a Problem Worth Solving</div><div class="ps-d">Students explore community challenges, talk to potential users, and research existing solutions. The best projects start with genuine empathy.</div></div></div>
+    <div class="ps rv d2"><div class="ps-num">02</div><div><div class="ps-h">Design Your Solution</div><div class="ps-d">Using the engineering design process: define requirements, brainstorm approaches, sketch and plan. Coaches challenge assumptions before building begins.</div></div></div>
+    <div class="ps rv d3"><div class="ps-num">03</div><div><div class="ps-h">Build &amp; Prototype</div><div class="ps-d">Students build their first version — and then iterate. Real engineering isn't about getting it right the first time. It's about getting better every time.</div></div></div>
+    <div class="ps rv d4"><div class="ps-num">04</div><div><div class="ps-h">Test with Real Users</div><div class="ps-d">Wherever possible, students test their solution with the people it's designed for. Real feedback changes everything.</div></div></div>
+    <div class="ps rv d5"><div class="ps-num">05</div><div><div class="ps-h">Showcase &amp; Present</div><div class="ps-d">Students present their project to coaches, families, and external judges. Communication is an engineering skill too.</div></div></div>
+  </div>
+</section>
+
+<section class="sec bg-off">
+  <div class="interest-box rv">
+    <div>
+      <div style="font-family:var(--display);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,.55);margin-bottom:14px;position:relative;z-index:1;">⚡ Enrollment Opening Soon</div>
+      <h2>Interested in<br>Innovate?</h2>
+      <p>The Innovate track is launching with select cohorts. Express your interest now and we'll reach out with details, eligibility, and enrollment timing.</p>
+    </div>
+    <div class="ib-acts">
+      <a href="https://www.blazeroboticsacademy.org/contact-us" class="btn btn-gold btn-lg">Express Interest →</a>
+      <a href="tel:4256108618" class="btn btn-out-w btn-lg">Call 425-610-8618</a>
+    </div>
+  </div>
+  <div class="also-comp rv">
+    <div style="display:flex;align-items:center;gap:22px;">
+      <div style="font-size:42px;flex-shrink:0;">🏆</div>
+      <div>
+        <div style="font-family:var(--display);font-size:22px;font-weight:900;color:var(--dark);margin-bottom:7px;text-transform:uppercase;letter-spacing:-.3px;line-height:1.05;">Also Considering Track A — Compete?</div>
+        <div style="font-size:14.5px;color:var(--gray-dk);line-height:1.65;font-weight:500;">Some students run a capstone project <em>and</em> compete on a team. Both tracks are open after Build Mastery — you don't have to choose just one.</div>
+      </div>
+    </div>
+    <a href="compete.html" class="btn btn-blue btn-lg">Explore Compete →</a>
   </div>
 </section>
 
