@@ -20,7 +20,7 @@ html{scroll-behavior:smooth;}
 body{font-family:var(--body);background:var(--off);color:var(--dark);overflow-x:hidden;font-size:17px;line-height:1.6;}
 
 /* TYPOGRAPHY */
-h1,h2,h3,h4,h5,.display{font-family:var(--display);font-weight:900;letter-spacing:-.5px;line-height:1;text-transform:uppercase;}
+h1,h2,h3,h4,h5,.display{font-family:var(--display);font-weight:600;letter-spacing:-.5px;line-height:1;text-transform:uppercase;}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;
@@ -30,9 +30,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
 .logo-text{display:flex;flex-direction:column;line-height:1;}
 .logo-name{font-family:var(--display);font-size:22px;font-weight:900;color:var(--blue-dk);text-transform:uppercase;letter-spacing:0;}
-.logo-sub{font-family:var(--display);font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:3px;margin-top:2px;}
+.logo-sub{font-family:var(--display);font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:3px;margin-top:2px;}
 .nl{display:flex;gap:4px;}
-.nl a{font-family:var(--display);font-size:15px;font-weight:700;color:var(--gray-dk);text-decoration:none;
+.nl a{font-family:var(--display);font-size:15px;font-weight:900;color:var(--gray-dk);text-decoration:none;
   padding:8px 14px;border-radius:4px;transition:all .15s;white-space:nowrap;text-transform:uppercase;letter-spacing:1px;}
 .nl a:hover{color:var(--dark);background:var(--off);}
 .nl a.on{color:var(--blue);background:var(--blue-lt);}
@@ -66,13 +66,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;
   color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:14px;}
 .lbl::before{content:'';display:block;width:32px;height:3px;background:currentColor;flex-shrink:0;}
 .lbl-teal{color:var(--teal);}.lbl-blue{color:var(--blue);}.lbl-gold{color:var(--gold);}
-.h2{font-family:var(--display);font-size:clamp(40px,5.5vw,68px);font-weight:900;line-height:.92;
+.h2{font-family:var(--display);font-size:clamp(40px,5.5vw,68px);font-weight:600;line-height:.92;
   color:var(--dark);margin-bottom:18px;text-transform:uppercase;letter-spacing:-1px;}
 .lead{font-size:18px;color:var(--gray-dk);line-height:1.65;max-width:620px;}
 
 /* TICKER */
 .ticker{background:var(--blue-dk);padding:14px 52px;display:flex;gap:18px;flex-wrap:wrap;align-items:center;}
-.ticker span{font-family:var(--display);font-size:14px;font-weight:700;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:1.5px;}
+.ticker span{font-family:var(--display);font-size:14px;font-weight:600;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:1.5px;}
 .ticker .sp{color:rgba(255,255,255,.25);}
 .ticker .hi{color:var(--gold-lt);font-weight:800;}
 
@@ -89,13 +89,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;
 /* FOOTER */
 footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 .fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
-.fn{font-family:var(--display);font-size:24px;font-weight:900;margin-bottom:12px;text-transform:uppercase;letter-spacing:0;}
+.fn{font-family:var(--display);font-size:24px;font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:0;}
 .fn em{font-style:normal;color:var(--red-lt);}
 .fd{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;max-width:280px;margin-bottom:20px;}
 .fs{display:flex;gap:10px;}
 .fsc{width:38px;height:38px;border-radius:4px;background:rgba(255,255,255,.1);
   border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-size:13px;font-weight:700;text-decoration:none;color:rgba(255,255,255,.7);
+  font-family:var(--display);font-size:13px;font-weight:600;text-decoration:none;color:rgba(255,255,255,.7);
   transition:background .15s;text-transform:uppercase;}
 .fsc:hover{background:rgba(255,255,255,.2);}
 .fch{font-family:var(--display);font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;
@@ -115,7 +115,8 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
   .hbg{display:block;}
   .enroll{display:none;}
   .sec{padding:64px 20px;}
-  .ticker{padding:12px 20px;gap:12px;}
+  .ticker{padding:12px 20px;gap:8px;flex-direction:column;align-items:flex-start;}
+  .ticker .sp{display:none;}
   footer{padding:48px 20px 28px;}
   .fg{grid-template-columns:1fr 1fr;gap:32px;}
 }
@@ -125,7 +126,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 .hero-pg::after{content:'';position:absolute;bottom:-60px;left:25%;width:360px;height:360px;border-radius:50%;background:rgba(0,0,0,.1);}
 .hc{position:relative;z-index:2;max-width:760px;}
 .step-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:4px;padding:7px 18px;font-family:var(--display);font-size:13px;font-weight:800;color:white;text-transform:uppercase;letter-spacing:2.5px;margin-bottom:24px;}
-.hero-pg h1{font-family:var(--display);font-size:clamp(52px,8vw,96px);font-weight:900;line-height:.88;color:white;margin-bottom:22px;text-transform:uppercase;letter-spacing:-1.5px;}
+.hero-pg h1{font-family:var(--display);font-size:clamp(52px,8vw,96px);font-weight:600;line-height:.88;color:white;margin-bottom:22px;text-transform:uppercase;letter-spacing:-1.5px;}
 .hero-pg h1 em{color:var(--gold-lt);font-style:normal;display:block;}
 .hero-pg h1 .lined{position:relative;display:inline-block;}
 .hero-pg h1 .lined::after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:7px;background:var(--gold-lt);}
@@ -140,7 +141,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 
 .gw{background:white;border:2px solid var(--border);border-radius:10px;padding:32px 36px;display:flex;gap:22px;align-items:flex-start;margin-top:56px;border-left:5px solid var(--red);}
 .gw-ico{font-size:34px;flex-shrink:0;}
-.gw-h{font-family:var(--display);font-size:22px;font-weight:900;color:var(--dark);text-transform:uppercase;letter-spacing:-.3px;margin-bottom:8px;line-height:1.05;}
+.gw-h{font-family:var(--display);font-size:22px;font-weight:600;color:var(--dark);text-transform:uppercase;letter-spacing:-.3px;margin-bottom:8px;line-height:1.05;}
 .gw-b{font-size:15.5px;color:var(--gray-dk);line-height:1.7;margin-bottom:18px;font-weight:500;}
 .gw-steps{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;}
 .gws{background:var(--off);border:1px solid var(--border);border-radius:4px;padding:8px 16px;font-family:var(--display);font-size:13px;font-weight:800;color:var(--gray-dk);text-transform:uppercase;letter-spacing:1.5px;}
@@ -151,7 +152,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 .tc:hover{box-shadow:0 6px 24px rgba(15,38,112,.12);transform:translateY(-4px);}
 .tc.hi{border-color:var(--gold);background:#fdf8ee;border-top:4px solid var(--gold);}
 .tchead{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
-.tcname{font-family:var(--display);font-size:30px;font-weight:900;color:var(--dark);text-transform:uppercase;letter-spacing:-.7px;line-height:1;}
+.tcname{font-family:var(--display);font-size:30px;font-weight:600;color:var(--dark);text-transform:uppercase;letter-spacing:-.7px;line-height:1;}
 .tcaw{font-family:var(--display);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);background:#fdf3dc;border:1px solid rgba(200,154,46,.3);padding:4px 11px;border-radius:3px;}
 .tclv{font-family:var(--display);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.8px;color:var(--gray-lt);margin-bottom:8px;}
 .tcd{font-size:14.5px;color:var(--gray-dk);line-height:1.6;font-weight:500;}
@@ -160,7 +161,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 .ig-cards{display:flex;flex-direction:column;gap:12px;}
 .igc{background:white;border:1px solid var(--border);border-radius:6px;padding:18px 20px;border-left:4px solid var(--gold);}
 .igcy{font-family:var(--display);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--gray-lt);margin-bottom:5px;}
-.igcr{font-family:var(--display);font-size:17px;font-weight:900;color:var(--dark);text-transform:uppercase;letter-spacing:-.3px;}
+.igcr{font-family:var(--display);font-size:17px;font-weight:600;color:var(--dark);text-transform:uppercase;letter-spacing:-.3px;}
 
 .pkgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px;}
 .pkg{background:white;border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s;}
@@ -169,7 +170,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 .pkg-h{padding:26px 24px;border-bottom:1px solid var(--border);}
 .pkg-h.fbg{background:var(--blue-lt);}
 .pkg-tier{font-family:var(--display);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;color:var(--gray-lt);margin-bottom:8px;}
-.pkg-name{font-family:var(--display);font-size:26px;font-weight:900;color:var(--dark);text-transform:uppercase;letter-spacing:-.5px;margin-bottom:6px;line-height:1;}
+.pkg-name{font-family:var(--display);font-size:26px;font-weight:600;color:var(--dark);text-transform:uppercase;letter-spacing:-.5px;margin-bottom:6px;line-height:1;}
 .pkg-desc{font-size:14px;color:var(--gray-dk);font-weight:500;}
 .pkg-b{padding:24px;flex:1;}
 .pkg-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
@@ -181,7 +182,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 
 .also-inno{background:rgba(13,115,119,.06);border:2px solid rgba(13,115,119,.22);border-radius:10px;padding:32px 36px;margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;}
 .ai-ico{font-size:42px;flex-shrink:0;}
-.ai-h{font-family:var(--display);font-size:22px;font-weight:900;color:var(--dark);text-transform:uppercase;letter-spacing:-.3px;margin-bottom:7px;line-height:1.05;}
+.ai-h{font-family:var(--display);font-size:22px;font-weight:600;color:var(--dark);text-transform:uppercase;letter-spacing:-.3px;margin-bottom:7px;line-height:1.05;}
 .ai-d{font-size:14.5px;color:var(--gray-dk);line-height:1.65;font-weight:500;}
 
 @media(max-width:960px){
@@ -213,7 +214,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
   <div class="hc">
     <div class="step-badge">🏆 Track A · After Build Mastery</div>
     <h1>Compete<br>at the<br><span class="lined">Highest Level.</span></h1>
-    <p class="hero-sub">For students who want to test their engineering on the competition floor. Real tournaments. Real pressure. Real growth. The foundation you built in Build Mastery is about to be put to the test.</p>
+    <p class="hero-sub">For students who want to test their engineering on the competition floor, where tournament pressure drives real growth. The foundation you built in Build Mastery is about to be put to the test.</p>
     <div class="hero-acts">
       <a href="build.html" class="btn btn-gold btn-lg">Start with Comp Prep</a>
       <a href="#coaching" class="btn btn-out-w btn-lg">Coaching Packages</a>
@@ -316,7 +317,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
   <div style="display:flex;align-items:center;justify-content:space-between;background:white;border:1px solid var(--border);border-radius:10px;padding:32px 36px;flex-wrap:wrap;gap:22px;margin-top:18px;border-top:4px solid var(--blue);" class="rv d1">
     <div>
       <div style="font-family:var(--display);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;color:var(--gray-lt);margin-bottom:8px;">For Current Team Families</div>
-      <div style="font-family:var(--display);font-size:28px;font-weight:900;color:var(--dark);margin-bottom:6px;text-transform:uppercase;letter-spacing:-.5px;line-height:1;">Parent Portal &amp; Team Resources</div>
+      <div style="font-family:var(--display);font-size:28px;font-weight:600;color:var(--dark);margin-bottom:6px;text-transform:uppercase;letter-spacing:-.5px;line-height:1;">Parent Portal &amp; Team Resources</div>
       <div style="font-size:15px;color:var(--gray-dk);font-weight:500;">Practice schedules, tournament dates, notebooks, and coach communications.</div>
     </div>
     <a href="https://www.blazeroboticsacademy.org/parent-portal-team-resources" class="btn btn-blue btn-lg">Access Portal →</a>

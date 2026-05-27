@@ -20,7 +20,7 @@ html{scroll-behavior:smooth;}
 body{font-family:var(--body);background:var(--off);color:var(--dark);overflow-x:hidden;font-size:17px;line-height:1.6;}
 
 /* TYPOGRAPHY */
-h1,h2,h3,h4,h5,.display{font-family:var(--display);font-weight:900;letter-spacing:-.5px;line-height:1;text-transform:uppercase;}
+h1,h2,h3,h4,h5,.display{font-family:var(--display);font-weight:600;letter-spacing:-.5px;line-height:1;text-transform:uppercase;}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;
@@ -30,9 +30,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
 .logo-text{display:flex;flex-direction:column;line-height:1;}
 .logo-name{font-family:var(--display);font-size:22px;font-weight:900;color:var(--blue-dk);text-transform:uppercase;letter-spacing:0;}
-.logo-sub{font-family:var(--display);font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:3px;margin-top:2px;}
+.logo-sub{font-family:var(--display);font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:3px;margin-top:2px;}
 .nl{display:flex;gap:4px;}
-.nl a{font-family:var(--display);font-size:15px;font-weight:700;color:var(--gray-dk);text-decoration:none;
+.nl a{font-family:var(--display);font-size:15px;font-weight:900;color:var(--gray-dk);text-decoration:none;
   padding:8px 14px;border-radius:4px;transition:all .15s;white-space:nowrap;text-transform:uppercase;letter-spacing:1px;}
 .nl a:hover{color:var(--dark);background:var(--off);}
 .nl a.on{color:var(--blue);background:var(--blue-lt);}
@@ -66,13 +66,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;
   color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:14px;}
 .lbl::before{content:'';display:block;width:32px;height:3px;background:currentColor;flex-shrink:0;}
 .lbl-teal{color:var(--teal);}.lbl-blue{color:var(--blue);}.lbl-gold{color:var(--gold);}
-.h2{font-family:var(--display);font-size:clamp(40px,5.5vw,68px);font-weight:900;line-height:.92;
+.h2{font-family:var(--display);font-size:clamp(40px,5.5vw,68px);font-weight:600;line-height:.92;
   color:var(--dark);margin-bottom:18px;text-transform:uppercase;letter-spacing:-1px;}
 .lead{font-size:18px;color:var(--gray-dk);line-height:1.65;max-width:620px;}
 
 /* TICKER */
 .ticker{background:var(--blue-dk);padding:14px 52px;display:flex;gap:18px;flex-wrap:wrap;align-items:center;}
-.ticker span{font-family:var(--display);font-size:14px;font-weight:700;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:1.5px;}
+.ticker span{font-family:var(--display);font-size:14px;font-weight:600;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:1.5px;}
 .ticker .sp{color:rgba(255,255,255,.25);}
 .ticker .hi{color:var(--gold-lt);font-weight:800;}
 
@@ -89,13 +89,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;
 /* FOOTER */
 footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 .fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
-.fn{font-family:var(--display);font-size:24px;font-weight:900;margin-bottom:12px;text-transform:uppercase;letter-spacing:0;}
+.fn{font-family:var(--display);font-size:24px;font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:0;}
 .fn em{font-style:normal;color:var(--red-lt);}
 .fd{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;max-width:280px;margin-bottom:20px;}
 .fs{display:flex;gap:10px;}
 .fsc{width:38px;height:38px;border-radius:4px;background:rgba(255,255,255,.1);
   border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-size:13px;font-weight:700;text-decoration:none;color:rgba(255,255,255,.7);
+  font-family:var(--display);font-size:13px;font-weight:600;text-decoration:none;color:rgba(255,255,255,.7);
   transition:background .15s;text-transform:uppercase;}
 .fsc:hover{background:rgba(255,255,255,.2);}
 .fch{font-family:var(--display);font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;
@@ -115,7 +115,8 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
   .hbg{display:block;}
   .enroll{display:none;}
   .sec{padding:64px 20px;}
-  .ticker{padding:12px 20px;gap:12px;}
+  .ticker{padding:12px 20px;gap:8px;flex-direction:column;align-items:flex-start;}
+  .ticker .sp{display:none;}
   footer{padding:48px 20px 28px;}
   .fg{grid-template-columns:1fr 1fr;gap:32px;}
 }
@@ -138,38 +139,59 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
   padding:7px 18px;border-radius:4px;margin-bottom:22px;width:fit-content;}
 .est-badge::before{content:'⚡';font-size:14px;}
 
-.hero h1{font-family:var(--display);font-size:clamp(72px,9vw,128px);font-weight:900;
+.hero h1{font-family:var(--display);font-size:clamp(72px,9vw,128px);font-weight:600;
   line-height:.86;color:white;margin-bottom:20px;letter-spacing:-2px;}
 .hero h1 .dot{color:var(--gold-lt);}
 .hero h1 .lined{position:relative;display:inline-block;}
 .hero h1 .lined::after{content:'';position:absolute;left:0;right:0;bottom:-10px;height:8px;background:var(--gold-lt);}
 
-.hero-tagline{font-family:var(--display);font-size:clamp(20px,2vw,26px);font-weight:700;
+.hero-tagline{font-family:var(--display);font-size:clamp(20px,2vw,26px);font-weight:600;
   color:var(--gold-lt);letter-spacing:1px;margin-bottom:24px;text-transform:uppercase;}
 .hero-sub{font-size:19px;color:rgba(255,255,255,.78);line-height:1.6;
   max-width:480px;margin-bottom:32px;font-weight:500;}
-.hero-acts{display:flex;gap:14px;flex-wrap:wrap;}
+.hero-acts{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:440px;}
+.hero-acts .btn{display:flex;align-items:center;justify-content:center;text-align:center;}
 
 .hstats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px;max-width:440px;}
 .hst{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
   border-radius:6px;padding:18px 20px;}
-.hst-n{font-family:var(--display);font-size:36px;font-weight:900;color:white;line-height:1;}
+.hst-n{font-family:var(--display);font-size:36px;font-weight:600;color:white;line-height:1;}
 .hst-n em{color:var(--gold-lt);font-style:normal;}
-.hst-l{font-family:var(--display);font-size:13px;font-weight:700;text-transform:uppercase;
+.hst-l{font-family:var(--display);font-size:13px;font-weight:600;text-transform:uppercase;
   letter-spacing:2px;color:rgba(255,255,255,.6);margin-top:6px;}
 
-/* RIGHT SIDE — 4 pillar cards */
-.pillars-stack{display:flex;flex-direction:column;gap:14px;width:100%;}
-.pillar-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);
-  border-radius:6px;padding:22px 24px;border-left:5px solid var(--blue-md);
-  transition:background .2s;}
-.pillar-card:hover{background:rgba(255,255,255,.13);}
-.pillar-card.gold{border-left-color:var(--gold-lt);background:rgba(220,180,80,.1);}
-.pc-icon{font-family:var(--display);font-size:13px;font-weight:800;
-  color:var(--gold-lt);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
-.pc-title{font-family:var(--display);font-size:22px;font-weight:900;color:white;
-  text-transform:uppercase;letter-spacing:-.5px;margin-bottom:6px;line-height:1;}
-.pc-desc{font-size:14px;color:rgba(255,255,255,.65);line-height:1.55;font-weight:500;}
+/* RIGHT SIDE — featured-program CTA panel */
+.hero-cta{background:#fff;border-radius:8px;padding:36px 34px;width:100%;max-width:440px;
+  box-shadow:0 24px 60px rgba(0,0,0,.32);}
+.hero-cta-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);
+  font-size:13px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;}
+.hero-cta h2{font-family:var(--display);font-size:clamp(30px,3vw,40px);font-weight:600;line-height:.92;
+  color:var(--dark);text-transform:uppercase;letter-spacing:-.5px;margin-bottom:12px;}
+.hero-cta p{font-size:15.5px;color:var(--gray-dk);line-height:1.6;margin-bottom:22px;font-weight:500;}
+.hero-cta .btn{display:block;width:100%;text-align:center;}
+.hero-cta-feat{margin-top:24px;padding-top:22px;border-top:1px solid var(--border);}
+.fp-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.hero-cta-feat-label{font-family:var(--display);font-size:12px;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gray-lt);}
+.fp-nav{display:flex;gap:6px;}
+.fp-btn{width:30px;height:30px;border-radius:4px;border:1px solid var(--border);background:var(--off);
+  font-family:var(--display);font-size:20px;line-height:1;color:var(--gray-dk);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.fp-btn:hover{background:var(--blue-lt);border-color:var(--blue);color:var(--blue);}
+.fp-viewport{overflow:hidden;}
+.fp-track{display:flex;width:100%;gap:14px;transition:transform .35s ease;}
+.fp-card{flex:0 0 82%;}
+.fp-thumb{height:128px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:52px;margin-bottom:14px;}
+.fp-thumb.t1{background:linear-gradient(135deg,var(--blue-dk),var(--blue-md));}
+.fp-thumb.t2{background:linear-gradient(135deg,#9a2f08,var(--red-lt));}
+.fp-thumb.t3{background:linear-gradient(135deg,var(--teal),var(--teal-lt));}
+.fp-thumb.t4{background:linear-gradient(135deg,var(--gold),var(--gold-lt));}
+.fp-grade{font-family:var(--display);font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray-lt);margin-bottom:5px;}
+.fp-name{font-family:var(--display);font-size:26px;font-weight:900;text-transform:uppercase;letter-spacing:-.5px;color:var(--dark);line-height:1;margin-bottom:14px;}
+.fp-cta{display:block;width:100%;text-align:center;}
+.fp-dots{display:flex;gap:7px;justify-content:center;margin-top:16px;}
+.fp-dot{width:8px;height:8px;border-radius:50%;border:none;background:var(--border);cursor:pointer;padding:0;transition:background .15s;}
+.fp-dot.on{background:var(--blue);}
 
 /* THREE PILLARS */
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
@@ -182,11 +204,11 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 .pillar-num{font-family:var(--display);font-size:14px;font-weight:800;letter-spacing:3px;
   color:var(--gray-lt);text-transform:uppercase;margin-bottom:10px;}
 .pillar-icon{font-size:48px;margin-bottom:14px;line-height:1;}
-.pillar-title{font-family:var(--display);font-size:28px;font-weight:900;color:var(--dark);
+.pillar-title{font-family:var(--display);font-size:28px;font-weight:600;color:var(--dark);
   text-transform:uppercase;letter-spacing:-.5px;margin-bottom:12px;line-height:1;}
 .pillar-desc{font-size:15px;color:var(--gray-dk);line-height:1.7;}
 .pillar-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;justify-content:center;}
-.ptag{font-family:var(--display);font-size:11px;font-weight:700;padding:5px 12px;
+.ptag{font-family:var(--display);font-size:11px;font-weight:600;padding:5px 12px;
   border-radius:3px;background:var(--off);color:var(--gray-dk);border:1px solid var(--border);
   text-transform:uppercase;letter-spacing:1.2px;}
 
@@ -202,20 +224,20 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 .jcard-step{font-family:var(--display);font-size:12px;font-weight:800;letter-spacing:3px;
   text-transform:uppercase;color:var(--gray-lt);margin-bottom:14px;}
 .jcard-ico{font-size:42px;margin-bottom:14px;line-height:1;}
-.jcard-title{font-family:var(--display);font-size:24px;font-weight:900;color:var(--dark);
+.jcard-title{font-family:var(--display);font-size:24px;font-weight:600;color:var(--dark);
   text-transform:uppercase;letter-spacing:-.5px;margin-bottom:10px;line-height:1;}
 .jcard-desc{font-size:14.5px;color:var(--gray-dk);line-height:1.6;margin-bottom:16px;}
 .jcard-link{font-family:var(--display);font-size:13px;font-weight:800;color:var(--blue);
   text-transform:uppercase;letter-spacing:1.5px;}
 .jcard-link.teal{color:var(--teal);}
 .jcard-foot{padding:14px 22px;border-top:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;}
-.jcard-foot span{font-family:var(--display);font-size:11px;font-weight:700;color:var(--gray-dk);
+.jcard-foot span{font-family:var(--display);font-size:11px;font-weight:600;color:var(--gray-dk);
   padding:5px 12px;border-radius:3px;background:var(--off);
   text-transform:uppercase;letter-spacing:1.2px;}
 
 /* PHILOSOPHY */
 .phil{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-.phil-quote{font-family:var(--display);font-size:clamp(32px,3.5vw,46px);font-weight:900;
+.phil-quote{font-family:var(--display);font-size:clamp(32px,3.5vw,46px);font-weight:600;
   color:var(--dark);line-height:1;border-left:6px solid var(--red);padding-left:28px;
   margin-bottom:28px;text-transform:uppercase;letter-spacing:-1px;}
 .phil-quote em{color:var(--blue);font-style:normal;}
@@ -226,7 +248,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
   justify-content:center;font-size:24px;flex-shrink:0;}
 .pi-blue{background:var(--blue-lt);}.pi-red{background:#fee8e0;}
 .pi-gold{background:#fdf3dc;}.pi-teal{background:var(--teal-dim);}
-.pi-h{font-family:var(--display);font-size:20px;font-weight:900;color:var(--dark);
+.pi-h{font-family:var(--display);font-size:20px;font-weight:600;color:var(--dark);
   text-transform:uppercase;letter-spacing:-.5px;margin-bottom:6px;line-height:1.05;}
 .pi-d{font-size:14.5px;color:var(--gray-dk);line-height:1.65;}
 
@@ -239,7 +261,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 .sg-blue{color:var(--blue);}.sg-red{color:var(--red);}
 .skill-chips{display:flex;flex-wrap:wrap;gap:10px;}
 .sc{display:flex;align-items:center;gap:8px;background:var(--off);border:1px solid var(--border);
-  border-radius:4px;padding:10px 16px;font-family:var(--display);font-size:14px;font-weight:700;
+  border-radius:4px;padding:10px 16px;font-family:var(--display);font-size:14px;font-weight:600;
   color:var(--dark);text-transform:uppercase;letter-spacing:1px;}
 .sc.cb{border-left:4px solid var(--blue);}.sc.cr{border-left:4px solid var(--red);}
 
@@ -250,7 +272,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 .proof::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;
   border-radius:50%;background:rgba(200,154,46,.08);}
 .proof-text{position:relative;z-index:1;}
-.proof-text h3{font-family:var(--display);font-size:clamp(28px,3vw,42px);font-weight:900;
+.proof-text h3{font-family:var(--display);font-size:clamp(28px,3vw,42px);font-weight:600;
   color:white;margin-bottom:18px;line-height:1;text-transform:uppercase;letter-spacing:-1px;}
 .proof-text h3 em{color:var(--gold-lt);font-style:normal;}
 .proof-text p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:22px;font-weight:500;}
@@ -260,7 +282,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
   border-radius:6px;padding:16px 20px;}
 .pr-yr{font-family:var(--display);font-size:12px;font-weight:800;text-transform:uppercase;
   letter-spacing:2px;color:rgba(255,255,255,.5);margin-bottom:5px;}
-.pr-r{font-family:var(--display);font-size:18px;font-weight:900;color:white;text-transform:uppercase;letter-spacing:-.3px;line-height:1.05;}
+.pr-r{font-family:var(--display);font-size:18px;font-weight:600;color:white;text-transform:uppercase;letter-spacing:-.3px;line-height:1.05;}
 .pr.gold{background:rgba(200,154,46,.15);border-color:rgba(200,154,46,.32);}
 .pr.gold .pr-r{color:var(--gold-lt);}
 
@@ -276,7 +298,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 .tav{width:42px;height:42px;border-radius:50%;background:var(--blue-lt);
   display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
 .tn{font-family:var(--display);font-size:16px;font-weight:800;color:var(--dark);text-transform:uppercase;letter-spacing:0;}
-.tr{font-family:var(--display);font-size:12px;font-weight:700;color:var(--gray);
+.tr{font-family:var(--display);font-size:12px;font-weight:600;color:var(--gray);
   text-transform:uppercase;letter-spacing:1.5px;margin-top:2px;}
 
 /* LOCATIONS */
@@ -285,7 +307,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
   transition:box-shadow .2s,transform .2s;}
 .lc:hover{box-shadow:0 6px 24px rgba(26,63,168,.12);transform:translateY(-4px);}
 .lch{background:linear-gradient(135deg,var(--blue-dk),var(--blue));padding:20px 22px;border-bottom:3px solid var(--gold);}
-.lcn{font-family:var(--display);font-size:24px;font-weight:900;color:white;text-transform:uppercase;letter-spacing:-.5px;}
+.lcn{font-family:var(--display);font-size:24px;font-weight:600;color:white;text-transform:uppercase;letter-spacing:-.5px;}
 .lcb{padding:18px 22px;}
 .lca{font-size:14.5px;color:var(--gray-dk);line-height:1.6;margin-bottom:10px;font-weight:500;}
 .lct{font-family:var(--display);font-size:11px;font-weight:800;text-transform:uppercase;
@@ -298,15 +320,18 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 .cta-banner::before{content:'';position:absolute;right:-60px;top:-60px;width:320px;height:320px;
   border-radius:50%;background:rgba(220,74,10,.15);}
 .cta-banner::after{content:'';position:absolute;bottom:0;left:0;right:0;height:6px;background:var(--gold);}
-.cta-banner h2{font-family:var(--display);font-size:clamp(32px,4.5vw,56px);font-weight:900;
+.cta-banner h2{font-family:var(--display);font-size:clamp(32px,4.5vw,56px);font-weight:600;
   color:white;margin-bottom:14px;text-transform:uppercase;letter-spacing:-1px;line-height:1;}
 .cta-banner p{font-size:17px;color:rgba(255,255,255,.7);max-width:480px;line-height:1.65;font-weight:500;}
 .cta-acts{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1;flex-shrink:0;}
 
 @media(max-width:960px){
   .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-left,.hero-right{min-width:0;}
   .hero-right{padding:0 30px 64px;}
   .hero-left{padding:110px 24px 36px;}
+  .hero-cta{max-width:none;}
+  .hero-acts{grid-template-columns:1fr;}
   .pillars,.jgrid{grid-template-columns:1fr 1fr;}
   .phil,.skills-wrap,.tgrid,.proof{grid-template-columns:1fr;}
   .lgrid{grid-template-columns:1fr 1fr;}
@@ -341,47 +366,67 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
     <p class="hero-sub">Blaze Robotics Academy develops the next generation of engineers, innovators, and leaders. From first-time builders to world-stage competitors — the foundation we build is the same.</p>
     <div class="hero-acts">
       <a href="ignite.html" class="btn btn-red btn-lg">Start Your Journey</a>
-      <a href="build.html" class="btn btn-out-w btn-lg">Explore Programs</a>
+      <a href="#journey" class="btn btn-out-w btn-lg">Explore Programs</a>
     </div>
     <div class="hstats">
       <div class="hst"><div class="hst-n">K<em>–</em>12</div><div class="hst-l">All Grades</div></div>
+      <div class="hst"><div class="hst-n">100<em>%</em></div><div class="hst-l">Hands-On</div></div>
       <div class="hst"><div class="hst-n">4</div><div class="hst-l">Locations</div></div>
-      <div class="hst"><div class="hst-n">20<em>+</em></div><div class="hst-l">Years</div></div>
-      <div class="hst"><div class="hst-n">5<em>×</em></div><div class="hst-l">Days / Week</div></div>
+      <div class="hst"><div class="hst-n">20<em>+</em></div><div class="hst-l">Years Experience</div></div>
     </div>
   </div>
   <div class="hero-right">
-    <div class="pillars-stack">
-      <div class="pillar-card">
-        <div class="pc-icon">▸ Pillar 01</div>
-        <div class="pc-title">Design Thinking</div>
-        <div class="pc-desc">Identify problems, prototype solutions, iterate until it works — the engineering mindset applied to everything.</div>
-      </div>
-      <div class="pillar-card">
-        <div class="pc-icon">▸ Pillar 02</div>
-        <div class="pc-title">Engineering Excellence</div>
-        <div class="pc-desc">Real robots, real code, real CAD. Students build skills that matter in college, careers, and life.</div>
-      </div>
-      <div class="pillar-card">
-        <div class="pc-icon">▸ Pillar 03</div>
-        <div class="pc-title">Soft Skills That Stick</div>
-        <div class="pc-desc">Collaboration, communication, leadership, and critical thinking — built into every session.</div>
-      </div>
-      <div class="pillar-card gold">
-        <div class="pc-icon">★ Proof</div>
-        <div class="pc-title">Results Follow the Foundation</div>
-        <div class="pc-desc">Do things right and winning takes care of itself. Partner academy to Ignite — 2026 VEX World Champions.</div>
+    <div class="hero-cta">
+      <div class="hero-cta-badge">★ Start Here</div>
+      <h2>Book a Free<br>Trial Class</h2>
+      <p>All experience levels welcome — see a class in action before you commit. No robotics background needed.</p>
+      <a href="https://app.amilia.com/store/en/blazeroboticsacademy/shop/programs" class="btn btn-red btn-lg">Book a Free Trial →</a>
+      <div class="hero-cta-feat">
+        <div class="fp-head">
+          <div class="hero-cta-feat-label">Featured Programs</div>
+          <div class="fp-nav">
+            <button class="fp-btn" type="button" data-dir="-1" aria-label="Previous program">‹</button>
+            <button class="fp-btn" type="button" data-dir="1" aria-label="Next program">›</button>
+          </div>
+        </div>
+        <div class="fp-viewport">
+          <div class="fp-track">
+            <div class="fp-card">
+              <div class="fp-thumb t1">🤖</div>
+              <div class="fp-grade">Grades K–3</div>
+              <div class="fp-name">RoboQuests</div>
+              <a href="build.html" class="btn btn-blue fp-cta">View Details →</a>
+            </div>
+            <div class="fp-card">
+              <div class="fp-thumb t2">🚀</div>
+              <div class="fp-grade">Grades 4–6</div>
+              <div class="fp-name">LaunchPad</div>
+              <a href="build.html" class="btn btn-blue fp-cta">View Details →</a>
+            </div>
+            <div class="fp-card">
+              <div class="fp-thumb t3">⚙️</div>
+              <div class="fp-grade">Grades 7–11</div>
+              <div class="fp-name">RoboChamps</div>
+              <a href="build.html" class="btn btn-blue fp-cta">View Details →</a>
+            </div>
+            <div class="fp-card">
+              <div class="fp-thumb t4">💡</div>
+              <div class="fp-grade">Grades 9–12</div>
+              <div class="fp-name">Capstone Innovate</div>
+              <a href="innovate.html" class="btn btn-blue fp-cta">View Details →</a>
+            </div>
+          </div>
+        </div>
+        <div class="fp-dots">
+          <button class="fp-dot on" type="button" data-i="0" aria-label="Go to program 1"></button>
+          <button class="fp-dot" type="button" data-i="1" aria-label="Go to program 2"></button>
+          <button class="fp-dot" type="button" data-i="2" aria-label="Go to program 3"></button>
+          <button class="fp-dot" type="button" data-i="3" aria-label="Go to program 4"></button>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
-<div class="ticker">
-  <span class="hi">⚙️ Design Thinking · Engineering Excellence · Soft Skills</span>
-  <span class="sp">|</span><span>📍 Bellevue · Bel-Red · Sammamish · Issaquah</span>
-  <span class="sp">|</span><span>💡 Compete Track &amp; Innovate Track</span>
-  <span class="sp">|</span><span>🎓 Grades K–12 · All Levels</span>
-</div>
 
 <!-- THREE PILLARS -->
 <section class="sec bg-white">
@@ -395,26 +440,27 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
       <div class="pillar-num">01</div>
       <div class="pillar-icon">🧠</div>
       <div class="pillar-title">Design Thinking</div>
-      <div class="pillar-desc">We teach students to approach every challenge the way real engineers do — define the problem, empathize with users, ideate without limits, prototype fast, and iterate until it works.</div>
+      <div class="pillar-desc">We teach students to approach every challenge the way real engineers do — empathize with users, define the problem, ideate without limits, prototype fast, and test relentlessly.</div>
       <div class="pillar-tags">
-        <span class="ptag">Problem Definition</span><span class="ptag">Prototyping</span>
-        <span class="ptag">Iteration</span><span class="ptag">User Empathy</span>
+        <span class="ptag">Empathize</span><span class="ptag">Define</span>
+        <span class="ptag">Ideate</span><span class="ptag">Prototype</span>
+        <span class="ptag">Test</span>
       </div>
     </div>
     <div class="pillar p2 rv d2">
       <div class="pillar-num">02</div>
       <div class="pillar-icon">⚙️</div>
       <div class="pillar-title">Engineering Excellence</div>
-      <div class="pillar-desc">Real VEX robotics kits. Real programming in Python and C++. Real 3D design tools. Real engineering notebooks. We hold our students to genuine technical standards.</div>
+      <div class="pillar-desc">Competition-grade robotics kits, programming in Python and C++, professional 3D design tools, and engineering notebooks — we hold students to genuine technical standards.</div>
       <div class="pillar-tags">
-        <span class="ptag">VEX Robotics</span><span class="ptag">Coding</span>
+        <span class="ptag">Robotics</span><span class="ptag">Coding</span>
         <span class="ptag">3D Design</span><span class="ptag">Systems Thinking</span>
       </div>
     </div>
     <div class="pillar p3 rv d3">
       <div class="pillar-num">03</div>
       <div class="pillar-icon">🌟</div>
-      <div class="pillar-title">Soft Skills That Last</div>
+      <div class="pillar-title">Soft Skills That Stick</div>
       <div class="pillar-desc">Every robot is built by a team. Every project requires communication. Every setback demands resilience. These aren't side effects of robotics — they're the whole point.</div>
       <div class="pillar-tags">
         <span class="ptag">Leadership</span><span class="ptag">Collaboration</span>
@@ -425,7 +471,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
 </section>
 
 <!-- JOURNEY -->
-<section class="sec bg-off">
+<section class="sec bg-off" id="journey">
   <div class="rv">
     <div class="lbl">The Blaze Journey</div>
     <div class="h2">Four Stages.<br>One Solid Foundation.</div>
@@ -464,7 +510,7 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
         <div class="jcard-step">Track A</div>
         <div class="jcard-ico">🏆</div>
         <div class="jcard-title">Compete</div>
-        <div class="jcard-desc">For students who want to test their engineering on the competition floor. Real tournaments, real growth under pressure.</div>
+        <div class="jcard-desc">For students who want to test their engineering on the competition floor, where tournament pressure drives real growth.</div>
         <div class="jcard-link">Join a Team →</div>
       </div>
       <div class="jcard-foot">
@@ -671,6 +717,15 @@ footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
   const h=document.querySelector('.hbg');
   const nl=document.querySelector('.nl');
   if(h&&nl)h.addEventListener('click',()=>nl.classList.toggle('open'));
+  const track=document.querySelector('.fp-track');
+  if(track){
+    const n=track.children.length;
+    const dots=Array.from(document.querySelectorAll('.fp-dot'));
+    let idx=0;
+    const go=i=>{idx=(i+n)%n;track.style.transform='translateX('+(-idx*100)+'%)';dots.forEach((d,k)=>d.classList.toggle('on',k===idx));};
+    document.querySelectorAll('.fp-btn').forEach(b=>b.addEventListener('click',()=>go(idx+parseInt(b.dataset.dir,10))));
+    dots.forEach(d=>d.addEventListener('click',()=>go(parseInt(d.dataset.i,10))));
+  }
 })();
 </script>
 </body>
