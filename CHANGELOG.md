@@ -6,6 +6,10 @@ All notable changes to the Blaze Robotics Academy website are recorded here.
 
 ### Changed
 
+#### Blaze Journey — regrouped the four cards by structure (`index.html`)
+- The four journey cards were all equal peers, which hid that Step 01→02 is a shared sequence and Track A/B are parallel alternatives. Regrouped them into two labeled groups — **"Build Your Foundation"** (Step 01 Ignite, Step 02 Build) and **"Then Choose Your Track"** (Track A Compete, Track B Innovate). New markup: `.jflow` › two `.jgroup`s, each a `.jgroup-label` + a `.jrow` of two cards. Replaced the old `.jgrid` (`repeat(4,1fr)`).
+- Responsive: groups side-by-side on wide screens (4 cards in two labeled pairs, 40px gap between groups vs 18px within), stack vertically at ≤960px (each group keeps its 2 cards side by side), and fully single-column at ≤560px. Updated the 960/560 breakpoint rules accordingly (`.jflow` stacks at 960, `.jrow` stacks at 560).
+
 #### Home — swapped section order (`index.html`)
 - Swapped the **The Blaze Journey** and **What We Believe** (Three Pillars) sections, so the journey now comes first (right after the hero) and the pillars follow. Flipped their `bg-white`/`bg-off` classes so the alternating background rhythm with neighboring sections is preserved (hero → white → off → white → …). Kept `id="journey"` on the Blaze Journey section so the hero's "Explore Programs" → `#journey` anchor still resolves.
 - Changed the Blaze Journey heading "**Four Stages.** One Solid Foundation." → "**Many Flexible Programs.** One Solid Foundation." — more accurate, since the program is a shared foundation (Ignite → Build) plus optional tracks (Compete / Innovate) rather than four fixed stages, and it reinforces the section's "the foundation is identical; where you go is your call" lead. The two lines are near-balanced (~14% width difference) and scale down cleanly on mobile.

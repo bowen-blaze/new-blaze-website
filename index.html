@@ -115,7 +115,13 @@
   text-transform:uppercase;letter-spacing:1.2px;}
 
 /* JOURNEY */
-.jgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px;}
+/* Journey: two labeled groups — the sequential foundation (Step 01–02) and the parallel
+   tracks (A/B). Groups sit side-by-side on wide screens, stack on smaller ones. */
+.jflow{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:56px;align-items:start;}
+.jgroup-label{font-family:var(--display);font-size:13px;font-weight:800;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--blue);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.jgroup-label::before{content:'';width:22px;height:2px;background:var(--gold-lt);}
+.jrow{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
 .jcard{border-radius:8px;border:1px solid var(--border);background:white;overflow:hidden;
   transition:box-shadow .2s,transform .2s;text-decoration:none;display:flex;flex-direction:column;}
 .jcard:hover{box-shadow:0 8px 32px rgba(26,63,168,.14);transform:translateY(-5px);}
@@ -241,7 +247,8 @@
     border:1px solid rgba(255,255,255,.13);border-top:2px solid var(--gold-lt);border-radius:8px;
     box-shadow:0 18px 50px rgba(0,0,0,.32);}
   .hero-acts{grid-template-columns:1fr;}
-  .pillars,.jgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+  .pillars{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+  .jflow{grid-template-columns:1fr;}   /* journey: stack the two groups (each still 2 cards) */
   .phil,.skills-wrap,.tgrid,.proof{grid-template-columns:1fr;}
   .lgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
   .cta-banner{grid-template-columns:1fr;padding:48px 28px;}
@@ -249,7 +256,7 @@
 @media(max-width:560px){
   /* Phones: stack the card grids to one column — 2-up cells are too narrow
      for the card titles (e.g. "Engineering Excellence") and spill/overflow. */
-  .pillars,.jgrid,.lgrid{grid-template-columns:1fr;}
+  .pillars,.lgrid,.jrow{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -348,59 +355,69 @@
     <div class="h2">Many Flexible Programs.<br>One Solid Foundation.</div>
     <p class="lead">Every student begins the same way — with curiosity and no prerequisites. The foundation we build is identical for everyone. Where you go from there is your call.</p>
   </div>
-  <div class="jgrid">
-    <a href="ignite.html" class="jcard rv d1">
-      <div class="jcard-stripe s1"></div>
-      <div class="jcard-body">
-        <div class="jcard-step">Step 01</div>
-        <div class="jcard-ico">✨</div>
-        <div class="jcard-title">Ignite Curiosity</div>
-        <div class="jcard-desc">No experience needed. Discover what you love about building, creating, and solving problems. Try before you commit.</div>
-        <div class="jcard-link">Explore →</div>
+  <div class="jflow">
+    <div class="jgroup">
+      <div class="jgroup-label">Build Your Foundation</div>
+      <div class="jrow">
+        <a href="ignite.html" class="jcard rv d1">
+          <div class="jcard-stripe s1"></div>
+          <div class="jcard-body">
+            <div class="jcard-step">Step 01</div>
+            <div class="jcard-ico">✨</div>
+            <div class="jcard-title">Ignite Curiosity</div>
+            <div class="jcard-desc">No experience needed. Discover what you love about building, creating, and solving problems. Try before you commit.</div>
+            <div class="jcard-link">Explore →</div>
+          </div>
+          <div class="jcard-foot">
+            <span>Trial Class</span><span>Membership</span>
+          </div>
+        </a>
+        <a href="build.html" class="jcard rv d2">
+          <div class="jcard-stripe s2"></div>
+          <div class="jcard-body">
+            <div class="jcard-step">Step 02</div>
+            <div class="jcard-ico">🛠️</div>
+            <div class="jcard-title">Build Mastery</div>
+            <div class="jcard-desc">Structured courses and camps. Engineering, coding, and design skills built through real curriculum — at every grade level.</div>
+            <div class="jcard-link">Programs →</div>
+          </div>
+          <div class="jcard-foot">
+            <span>Courses</span><span>Camps</span>
+          </div>
+        </a>
       </div>
-      <div class="jcard-foot">
-        <span>Trial Class</span><span>Membership</span>
+    </div>
+    <div class="jgroup">
+      <div class="jgroup-label">Then Choose Your Track</div>
+      <div class="jrow">
+        <a href="compete.html" class="jcard rv d3">
+          <div class="jcard-stripe s3"></div>
+          <div class="jcard-body">
+            <div class="jcard-step">Track A</div>
+            <div class="jcard-ico">🏆</div>
+            <div class="jcard-title">Compete</div>
+            <div class="jcard-desc">For students who want to test their engineering on the competition floor, where tournament pressure drives real growth.</div>
+            <div class="jcard-link">Join a Team →</div>
+          </div>
+          <div class="jcard-foot">
+            <span>Comp Prep</span><span>Teams</span>
+          </div>
+        </a>
+        <a href="innovate.html" class="jcard rv d4">
+          <div class="jcard-stripe s4"></div>
+          <div class="jcard-body">
+            <div class="jcard-step">Track B</div>
+            <div class="jcard-ico">💡</div>
+            <div class="jcard-title">Innovate</div>
+            <div class="jcard-desc">For students who want to apply engineering to real-world problems. Capstone projects and Robot for Good initiatives.</div>
+            <div class="jcard-link teal">Innovate →</div>
+          </div>
+          <div class="jcard-foot">
+            <span>Robot for Good</span><span>Capstone</span>
+          </div>
+        </a>
       </div>
-    </a>
-    <a href="build.html" class="jcard rv d2">
-      <div class="jcard-stripe s2"></div>
-      <div class="jcard-body">
-        <div class="jcard-step">Step 02</div>
-        <div class="jcard-ico">🛠️</div>
-        <div class="jcard-title">Build Mastery</div>
-        <div class="jcard-desc">Structured courses and camps. Engineering, coding, and design skills built through real curriculum — at every grade level.</div>
-        <div class="jcard-link">Programs →</div>
-      </div>
-      <div class="jcard-foot">
-        <span>Courses</span><span>Camps</span>
-      </div>
-    </a>
-    <a href="compete.html" class="jcard rv d3">
-      <div class="jcard-stripe s3"></div>
-      <div class="jcard-body">
-        <div class="jcard-step">Track A</div>
-        <div class="jcard-ico">🏆</div>
-        <div class="jcard-title">Compete</div>
-        <div class="jcard-desc">For students who want to test their engineering on the competition floor, where tournament pressure drives real growth.</div>
-        <div class="jcard-link">Join a Team →</div>
-      </div>
-      <div class="jcard-foot">
-        <span>Comp Prep</span><span>Teams</span>
-      </div>
-    </a>
-    <a href="innovate.html" class="jcard rv d4">
-      <div class="jcard-stripe s4"></div>
-      <div class="jcard-body">
-        <div class="jcard-step">Track B</div>
-        <div class="jcard-ico">💡</div>
-        <div class="jcard-title">Innovate</div>
-        <div class="jcard-desc">For students who want to apply engineering to real-world problems. Capstone projects and Robot for Good initiatives.</div>
-        <div class="jcard-link teal">Innovate →</div>
-      </div>
-      <div class="jcard-foot">
-        <span>Robot for Good</span><span>Capstone</span>
-      </div>
-    </a>
+    </div>
   </div>
 </section>
 
