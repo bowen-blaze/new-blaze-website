@@ -6,6 +6,15 @@ All notable changes to the Blaze Robotics Academy website are recorded here.
 
 ### Changed
 
+#### Project reorganization — extracted shared code into directories
+- De-duplicated the site: the design system and shared JS were previously copy-pasted into all six pages (e.g. the logo change had to be made six times). Pulled the shared parts into external files — still fully static, no build step.
+  - **`css/base.css`** — the 121 lines of design-system CSS that were byte-for-byte identical across all pages (`:root` tokens, typography, nav, buttons, section headers, footer, ticker, scroll-reveal, the base `@media(max-width:960px)` rules). Each page now has `<link rel="stylesheet" href="css/base.css">` **before** its own (page-specific-only) `<style>`, so page rules still override base.
+  - **`js/main.js`** — the shared IIFE (scroll-reveal `IntersectionObserver` + mobile nav-hamburger toggle), loaded on every page via `<script src="js/main.js">`. Page-specific JS stays inline: `index`'s carousel (now its own IIFE), `ignite`'s `showQ()`, `build`'s `filterC()`.
+  - **`assets/img/`** — created and moved `logo_trimmed.png` here (via `git mv`); updated the `src` in all six pages to `assets/img/logo_trimmed.png`.
+- Net effect: total HTML dropped from ~2,961 → ~2,185 lines (~776 duplicated lines removed), replaced by ~134 lines of shared `base.css` + `main.js`. Shared chrome/tokens are now edited once.
+- HTML pages intentionally **stay in the repo root** (not moved into a `/pages` folder) to preserve their URLs and Vercel routing.
+- Verified every page in the preview: `base.css` + `main.js` load (200), CSS tokens resolve, logo loads from the new path, scroll-reveal + nav toggle + carousel (incl. swipe) + `showQ`/`filterC` all work, no console errors, no layout/overflow changes. Updated `CLAUDE.md` to document the new structure.
+
 #### Logo — new image lockup (all 6 pages)
 - Replaced the site logo across all six pages (`index`, `ignite`, `build`, `compete`, `innovate`, `about`). The old logo was an inline base64-embedded gear/triangle mark **plus** a separate `.logo-text` wordmark ("Blaze Robotics" / "Academy"). Swapped both for a single image file, **`logo_trimmed.png`** (1890×288 horizontal lockup that already contains the mark + full "Blaze Robotics Academy" wordmark), and removed the now-redundant `.logo-text` spans.
 - Added a `.logo-img` rule (`height:42px; width:auto; display:block`) so the lockup sits at 42px tall in the 72px nav; mobile override (`≤960px`) drops it to 34px so it doesn't crowd the hamburger.

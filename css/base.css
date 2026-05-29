@@ -1,0 +1,123 @@
+/* Blaze Robotics Academy — shared design system.
+   Extracted from the per-page <style> blocks (identical across all pages).
+   Loaded via <link> before each page's page-specific <style>. */
+:root{
+  --blue:#1a3fa8;--blue-dk:#0f2670;--blue-md:#2a55cc;--blue-lt:#e8eef8;--blue-xlt:#f0f4fb;
+  --red:#dc4a0a;--red-lt:#ef6020;
+  --gold:#c89a2e;--gold-lt:#e0b84a;--gold-dim:rgba(200,154,46,.12);
+  --teal:#0d7377;--teal-lt:#14a085;--teal-dim:rgba(13,115,119,.1);
+  --gray:#6b7280;--gray-lt:#9ca3af;--gray-dk:#374151;
+  --off:#f4f6fb;--border:#e5e7eb;--white:#fff;--dark:#0f1419;
+  --display:'Barlow Condensed',sans-serif;
+  --body:'Barlow',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--body);background:var(--off);color:var(--dark);overflow-x:hidden;font-size:17px;line-height:1.6;}
+
+/* TYPOGRAPHY */
+h1,h2,h3,h4,h5,.display{font-family:var(--display);font-weight:600;letter-spacing:-.5px;line-height:1;text-transform:uppercase;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 52px;background:var(--white);border-bottom:1px solid var(--border);
+  box-shadow:0 1px 12px rgba(0,0,0,.06);}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-img{height:42px;width:auto;display:block;}
+/* Logo wordmark text styles — unused since the logo became a single image (logo_trimmed.png).
+   Kept here in case we revert to a text wordmark in future.
+.logo-text{display:flex;flex-direction:column;line-height:1;}
+.logo-name{font-family:var(--display);font-size:22px;font-weight:900;color:var(--blue-dk);text-transform:uppercase;letter-spacing:0;}
+.logo-sub{font-family:var(--display);font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:3px;margin-top:2px;}
+*/
+.nl{display:flex;gap:4px;}
+.nl a{font-family:var(--display);font-size:15px;font-weight:900;color:var(--gray-dk);text-decoration:none;
+  padding:8px 14px;border-radius:4px;transition:all .15s;white-space:nowrap;text-transform:uppercase;letter-spacing:1px;}
+.nl a:hover{color:var(--dark);background:var(--off);}
+.nl a.on{color:var(--blue);background:var(--blue-lt);}
+.nl a.on-innovate{color:var(--teal);background:var(--teal-dim);}
+.enroll{font-family:var(--display);background:var(--red);color:white;font-size:15px;font-weight:800;
+  padding:11px 24px;border-radius:4px;text-decoration:none;transition:background .15s;
+  text-transform:uppercase;letter-spacing:1.5px;white-space:nowrap;}
+.enroll:hover{background:var(--red-lt);}
+.hbg{display:none;background:none;border:none;font-size:26px;cursor:pointer;color:var(--dark);}
+
+/* BUTTONS */
+.btn{display:inline-block;font-family:var(--display);font-size:15px;font-weight:800;
+  padding:14px 28px;border-radius:4px;text-decoration:none;border:none;cursor:pointer;
+  transition:all .15s;text-transform:uppercase;letter-spacing:1.5px;}
+.btn-lg{font-size:16px;padding:16px 32px;}
+.btn-blue{background:var(--blue);color:white;}.btn-blue:hover{background:var(--blue-md);}
+.btn-red{background:var(--red);color:white;}.btn-red:hover{background:var(--red-lt);}
+.btn-teal{background:var(--teal);color:white;}.btn-teal:hover{background:var(--teal-lt);}
+.btn-gold{background:var(--gold);color:var(--dark);}.btn-gold:hover{background:var(--gold-lt);}
+.btn-out{background:white;color:var(--blue);border:2px solid var(--blue);}.btn-out:hover{background:var(--blue-lt);}
+.btn-out-w{background:transparent;color:white;border:2px solid rgba(255,255,255,.5);}.btn-out-w:hover{border-color:white;background:rgba(255,255,255,.1);}
+.btn-ghost{background:transparent;color:var(--gray-dk);border:2px solid var(--border);}.btn-ghost:hover{border-color:var(--gray-lt);}
+
+/* SECTIONS */
+.sec{padding:100px 52px;}
+.bg-white{background:white;}.bg-off{background:var(--off);}
+.bg-blue{background:var(--blue-dk);}.bg-teal{background:var(--teal);}
+
+/* SECTION HEADERS */
+.lbl{font-family:var(--display);font-size:14px;font-weight:800;letter-spacing:3px;text-transform:uppercase;
+  color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.lbl::before{content:'';display:block;width:32px;height:3px;background:currentColor;flex-shrink:0;}
+.lbl-teal{color:var(--teal);}.lbl-blue{color:var(--blue);}.lbl-gold{color:var(--gold);}
+.h2{font-family:var(--display);font-size:clamp(40px,5.5vw,68px);font-weight:600;line-height:.92;
+  color:var(--dark);margin-bottom:18px;text-transform:uppercase;letter-spacing:-1px;}
+.lead{font-size:18px;color:var(--gray-dk);line-height:1.65;max-width:620px;}
+
+/* TICKER */
+.ticker{background:var(--blue-dk);padding:14px 52px;display:flex;gap:18px;flex-wrap:wrap;align-items:center;}
+.ticker span{font-family:var(--display);font-size:14px;font-weight:600;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:1.5px;}
+.ticker .sp{color:rgba(255,255,255,.25);}
+.ticker .hi{color:var(--gold-lt);font-weight:800;}
+
+/* GOLD UNDERLINE — varsity signature */
+.gold-line{position:relative;display:inline-block;}
+.gold-line::after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:6px;background:var(--gold-lt);}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.rv.in{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}
+.d4{transition-delay:.32s;}.d5{transition-delay:.4s;}
+
+/* FOOTER */
+footer{background:var(--blue-dk);color:white;padding:64px 52px 32px;}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.fn{font-family:var(--display);font-size:24px;font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:0;}
+.fn em{font-style:normal;color:var(--red-lt);}
+.fd{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;max-width:280px;margin-bottom:20px;}
+.fs{display:flex;gap:10px;}
+.fsc{width:38px;height:38px;border-radius:4px;background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:13px;font-weight:600;text-decoration:none;color:rgba(255,255,255,.7);
+  transition:background .15s;text-transform:uppercase;}
+.fsc:hover{background:rgba(255,255,255,.2);}
+.fch{font-family:var(--display);font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;
+  color:rgba(255,255,255,.5);margin-bottom:16px;}
+.fc a{display:block;font-family:var(--body);font-size:15px;color:rgba(255,255,255,.65);text-decoration:none;padding:5px 0;transition:color .15s;font-weight:500;}
+.fc a:hover{color:white;}
+.fb{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.fc2{font-size:13px;color:rgba(255,255,255,.32);}
+
+@media(max-width:960px){
+  nav{padding:0 18px;height:64px;}
+  .logo-img{height:34px;}
+  .nl{display:none;position:absolute;top:64px;left:0;right:0;background:white;
+    flex-direction:column;padding:14px 18px;gap:2px;border-bottom:1px solid var(--border);
+    box-shadow:0 4px 16px rgba(0,0,0,.1);}
+  .nl.open{display:flex;}
+  .hbg{display:block;}
+  .enroll{display:none;}
+  .sec{padding:64px 20px;}
+  .ticker{padding:12px 20px;gap:8px;flex-direction:column;align-items:flex-start;}
+  .ticker .sp{display:none;}
+  footer{padding:48px 20px 28px;}
+  .fg{grid-template-columns:1fr 1fr;gap:32px;}
+}

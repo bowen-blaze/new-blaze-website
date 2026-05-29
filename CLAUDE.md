@@ -8,16 +8,30 @@ Marketing website for **Blaze Robotics Academy**, a K–12 robotics education pr
 
 ## What this is
 
-A set of **static HTML pages**. Each page is fully self-contained — markup, an inline
-`<style>` block, and a small inline `<script>` all live in one `.html` file. **No build
-step, no framework, no bundler.** Only external dependency is Google Fonts (Barlow /
-Barlow Condensed) over CDN.
+A set of **static HTML pages**. **No build step, no framework, no bundler** — just files
+served as-is. External dependencies are Google Fonts (Barlow / Barlow Condensed) over CDN,
+plus the project's own shared `css/base.css` and `js/main.js`.
+
+Each page links the shared design system, then carries its own **page-specific** `<style>`
+block and (where needed) a small inline `<script>` for page-only behavior.
+
+### Directory layout
+```
+/                      ← HTML pages live in the root (keeps clean URLs + Vercel routing)
+├── css/base.css       ← shared design system: :root tokens, nav, buttons, footer,
+│                         ticker, scroll-reveal, the @media(max-width:960px) base, etc.
+├── js/main.js         ← shared site JS: scroll-reveal observer + mobile nav toggle
+└── assets/img/        ← images (e.g. logo_trimmed.png)
+```
+Every page has `<link rel="stylesheet" href="css/base.css">` **before** its own `<style>`
+(so page CSS can override base), and `<script src="js/main.js"></script>` near `</body>`.
+**Edit shared chrome/tokens in `css/base.css` / `js/main.js` once** — don't re-add it per page.
 
 | File | Page | Purpose |
 | --- | --- | --- |
-| `index.html` | Home | Overview, three pillars, four-stage journey. **Most actively edited.** |
-| `ignite.html` | Ignite Curiosity | Step 01 — trial classes / membership, no experience needed. |
-| `build.html` | Build Mastery | Step 02 — structured courses & camps by grade. |
+| `index.html` | Home | Overview, three pillars, four-stage journey. **Most actively edited.** Has page-specific carousel JS in its own inline IIFE. |
+| `ignite.html` | Ignite Curiosity | Step 01 — trial classes / membership, no experience needed. Inline `showQ()` helper. |
+| `build.html` | Build Mastery | Step 02 — structured courses & camps by grade. Inline `filterC()` helper. |
 | `compete.html` | Compete | Track A — competition teams, tournament prep. |
 | `innovate.html` | Innovate | Track B — capstone projects, "Robot for Good". |
 | `about.html` | About Us | Story, approach, Ignite partnership, FAQs. |
@@ -38,12 +52,15 @@ Dev server is configured in `.claude/launch.json` (named `static-site`):
 
 ## Conventions
 
-### Design system (5 pages: index, ignite, build, compete, innovate, + about)
+### Design system (all 6 pages; defined once in `css/base.css`)
 - Fonts: **Barlow Condensed** (display/headings, uppercase) + **Barlow** (body).
-- Shared `:root` CSS custom properties: `--blue`, `--blue-dk`, `--gold-lt`, `--red`,
-  `--display`, `--body`, `--dark:#0f1419`, etc.
+- Shared `:root` CSS custom properties (in `base.css`): `--blue`, `--blue-dk`, `--gold-lt`,
+  `--red`, `--display`, `--body`, `--dark:#0f1419`, etc.
 - Display headings use `font-weight:600` (deliberately lightened from 900); site chrome
-  (logo wordmark `.logo-name`, nav links `.nl a`) stays bold (900) for contrast.
+  (nav links `.nl a`) stays bold (900) for contrast.
+- The logo is an **image** (`assets/img/logo_trimmed.png`, `.logo-img`), sized 42px tall in
+  the nav (34px on mobile). The old text-wordmark CSS (`.logo-text/.logo-name/.logo-sub`) is
+  kept **commented out** in each page's `<style>` in case we revert.
 - Card corners ~8px with top/left gold accent borders. Glassmorphism for the hero CTA
   panel (translucent bg + `backdrop-filter:blur` + gold top border).
 - `about.html` was originally a different design system (Outfit font) — it has been fully
@@ -74,8 +91,9 @@ Dev server is configured in `.claude/launch.json` (named `static-site`):
 ### Hero carousel (`.fp-*` in index.html)
 - Featured Programs carousel: auto-rotates every 4500ms, pauses on hover, peek layout
   (cards `flex:0 0 82%` so the next peeks in), pixel-based translate stepping, last card
-  right-aligns via `Math.max(-idx*step, viewportW - trackW)`. Logic lives in the page's
-  inline IIFE.
+  right-aligns via `Math.max(-idx*step, viewportW - trackW)`. Logic lives in `index.html`'s
+  own inline IIFE (separate from the shared `js/main.js`). Supports finger-swipe on
+  touch/pen (Pointer Events + `touch-action:pan-y`); desktop keeps arrows + dots.
 
 ## Workflow expectations
 - **Log every change in `CHANGELOG.md`** (under the current date heading) — the user
@@ -85,6 +103,10 @@ Dev server is configured in `.claude/launch.json` (named `static-site`):
 - The user commits to git (`main`, remote `origin`). Don't commit unless asked.
 
 ## Key files
+- `css/base.css` — shared design system (tokens, nav, buttons, footer, ticker, reveal,
+  base responsive). **Edit shared styles here, once.**
+- `js/main.js` — shared site JS (scroll-reveal observer + mobile nav toggle).
+- `assets/img/` — images (logo, etc.).
 - `CHANGELOG.md` — full running history of every change. **Read this to see recent work.**
 - `README.md` — public-facing project description.
 - `.claude/launch.json` — dev server config.

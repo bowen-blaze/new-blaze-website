@@ -4,9 +4,10 @@ Marketing website for Blaze Robotics Academy, a K–12 robotics education progra
 engineering, coding, and design thinking across four locations in the Seattle area
 (Bellevue, Bel-Red, Sammamish, Issaquah).
 
-The site is a set of static HTML pages. Each page is fully self-contained — markup, inline
-CSS, and a small inline JavaScript snippet all live in a single `.html` file. There is no
-build step, framework, or external dependency beyond Google Fonts (Barlow / Barlow
+The site is a set of static HTML pages. There is no build step, framework, or bundler —
+files are served as-is. Pages share a common design system and behavior through two
+project files, `css/base.css` and `js/main.js`, and otherwise keep their page-specific
+styles and scripts inline. The only external dependency is Google Fonts (Barlow / Barlow
 Condensed) loaded over CDN.
 
 ## Pages
@@ -25,16 +26,28 @@ via a shared top navigation.
 
 ## Structure
 
+```
+/                      HTML pages live in the repo root (keeps clean URLs)
+├── css/base.css       Shared design system: :root color/typography tokens, nav,
+│                      buttons, footer, ticker, scroll-reveal, base responsive rules
+├── js/main.js         Shared site JS: scroll-reveal (IntersectionObserver) + mobile nav toggle
+├── assets/img/        Images (e.g. logo_trimmed.png)
+├── *.html             The six pages (see table above)
+├── README.md          This file
+├── CHANGELOG.md       Running history of changes
+└── CLAUDE.md          Notes for AI assistants working on the project
+```
+
 Each page follows the same template:
 
-- **`<head>`** — meta tags, page title, Google Fonts link, and a `<style>` block with all
-  CSS (CSS custom properties define the shared color palette and typography).
-- **`<nav>`** — fixed top navigation shared across all pages, plus an "Enroll Now" button
-  linking to the external Amilia store.
+- **`<head>`** — meta tags, page title, Google Fonts link, `<link>` to `css/base.css`
+  (the shared design system), then a `<style>` block with **page-specific** CSS only.
+- **`<nav>`** — fixed top navigation shared across all pages, with the logo image and an
+  "Enroll Now" button linking to the external Amilia store.
 - **Content sections** — hero, pillars, journey cards, etc.
 - **`<footer>`** — site links, social media, locations, and contact info.
-- **`<script>`** — a small inline script for scroll-reveal animations
-  (`IntersectionObserver`) and the mobile nav toggle.
+- **Scripts** — `js/main.js` (shared scroll-reveal + nav toggle) plus, on some pages, a
+  small inline script for page-specific behavior (e.g. the home-page carousel).
 
 ## Viewing locally
 
