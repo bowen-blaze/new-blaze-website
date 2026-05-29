@@ -89,14 +89,18 @@ Dev server is configured in `.claude/launch.json` (named `static-site`):
   paragraph → stats → Featured Programs carousel.
 
 ### Hero carousel (`.fp-*` in index.html)
-- Featured Programs carousel: auto-rotates every 4500ms, pauses on hover, peek layout
-  (cards `flex:0 0 82%` so the next peeks in), pixel-based translate stepping, last card
-  right-aligns via `Math.max(-idx*step, viewportW - trackW)`. Logic lives in `index.html`'s
-  own inline IIFE (separate from the shared `js/main.js`). Supports finger-swipe via
-  **Touch Events** (`touchmove` is `{passive:false}` so horizontal drags `preventDefault`;
-  vertical is left to scroll, aided by `touch-action:pan-y`). Touch Events were chosen over
-  Pointer Events because the latter are unreliable for touch dragging on iOS Safari. Desktop
-  keeps arrows + dots.
+- Featured Programs carousel uses **native CSS scroll-snap** (not JS transforms): `.fp-viewport`
+  is `display:flex; overflow-x:auto; scroll-snap-type:x mandatory` (scrollbar hidden),
+  `.fp-track` is `display:contents`, cards are `flex:0 0 82%` (peek layout) with
+  `scroll-snap-align:start`. **The finger swipe is the browser's own horizontal scroll** —
+  this is the reliable approach on iOS Safari. (History: earlier versions emulated swipe with a
+  JS-translated track + Pointer/Touch handlers; that worked on desktop but broke on iOS because
+  iOS mis-hit-tests touches over content overflowing a transformed element. Don't reintroduce a
+  transform-based track.)
+- The inline IIFE (separate from shared `js/main.js`) only drives the arrows/dots/autoplay
+  (`vp.scrollTo`, auto-rotate every 4500ms) and syncs the active dot to the scrolled position
+  via a debounced `scroll` listener; autoplay pauses on hover (desktop) and `touchstart`
+  (mobile). Desktop still has arrows + dots; trackpad/drag scroll works too.
 
 ## Workflow expectations
 - **Log every change in `CHANGELOG.md`** (under the current date heading) — the user
