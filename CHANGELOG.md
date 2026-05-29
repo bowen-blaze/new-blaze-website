@@ -28,6 +28,10 @@ All notable changes to the Blaze Robotics Academy website are recorded here.
   - Auto-rotation pauses while dragging and resumes on release. Refactored the translate math into a shared `txFor(i)` helper used by both `go()` and the drag handler. Added `user-select:none` on the track to prevent text selection mid-swipe.
 - Verified via simulated touch events: left/right swipes change cards, a 25px drag snaps back, and a vertical drag leaves the carousel untouched.
 
+#### Fix — logo broken on Vercel (filename case mismatch)
+- The logo loaded locally but 404'd on the Vercel deploy. Cause: the file was tracked in git as **`Logo_trimmed.png`** (capital L) while all six pages reference **`logo_trimmed.png`** (lowercase). Windows is case-insensitive so it resolved locally, but Vercel's Linux filesystem is case-sensitive, so the lowercase `src` didn't match the capitalized file.
+- Renamed the tracked file to lowercase **`logo_trimmed.png`** (via `git mv`) so the git-tracked name matches the `src` references exactly. **Must be committed and pushed** for the Vercel deploy to pick it up.
+
 ## 2026-05-26
 
 ### Added
