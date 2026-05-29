@@ -87,6 +87,11 @@ Dev server is configured in `.claude/launch.json` (named `static-site`):
   `.hero-right`, `.hero-cta`) to reorder elements between desktop and mobile **without
   HTML changes**. Current mobile order: badge → headline → tagline → CTA top half →
   paragraph → stats → Featured Programs carousel.
+- **The hero has no "pillars."** Its left column is badge → headline → tagline → paragraph
+  → stats; its right column is the CTA panel + Featured Programs carousel. The
+  **Three Pillars** (Design Thinking / Engineering Excellence / Soft Skills) are a separate
+  `.pillars` section further down the page — that's the *only* place pillar content lives.
+  (An earlier version duplicated pillars in the hero-right; that was replaced by the CTA panel.)
 
 ### Hero carousel (`.fp-*` in index.html)
 - Featured Programs carousel uses **native CSS scroll-snap** (not JS transforms): `.fp-viewport`

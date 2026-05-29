@@ -6,6 +6,15 @@ All notable changes to the Blaze Robotics Academy website are recorded here.
 
 ### Changed
 
+#### Three Pillars — added "iterate" to Design Thinking (`index.html`)
+- Added the iteration step to the Design Thinking pillar so the design-thinking loop is complete: description now ends "…prototype fast, test relentlessly, **and iterate until it works**," and a matching **Iterate** tag was added (now Empathize · Define · Ideate · Prototype · Test · Iterate).
+
+#### Three Pillars — rewrote Engineering Excellence (`index.html`)
+- Rewrote the Engineering Excellence pillar description: "Robotics brings together mechanical, electrical, and computer engineering — and our students work across all three. From competition-grade robots and real code to professional design tools and AI, we hold them to genuine technical standards." Frames robotics as the union of **mechanical, electrical, and computer engineering**, drops "kits," and keeps it brief (~35 words, in line with the other two pillars); the specifics (Coding, CAD, AI, Engineering Design Process) are carried by the pillar's tags rather than spelled out in prose.
+- Updated that pillar's tags to match the new content: **Robotics · Coding · CAD · AI · Engineering Design Process** (was Robotics · Coding · 3D Design · Systems Thinking).
+- Added a **Problem Solving** tag to the Soft Skills pillar (now Leadership · Collaboration · Communication · Critical Thinking · Problem Solving).
+- Changed the Soft Skills pillar icon from a star (🌟) to a handshake (🤝), so the three pillar icons read as think → build → collaborate (🧠 · ⚙️ · 🤝).
+
 #### Home hero — stats replaced (`index.html`)
 - Replaced the four hero stats (`K–12 / All Grades`, `100% / Hands-On`, `4 / Locations`, `20+ / Years Experience`) with six achievement/scale stats that better convey track record: **5000+ Students Taught**, **10+ Years**, **160+ State Qualifiers**, **50+ World Qualifiers**, **600+ Awards**, **30+ Communities & Schools Served**. The 2-column `.hstats` grid now flows to a 2×3 layout; each number keeps the gold `<em>` accent on its `+`. Verified no overflow and all labels fit at desktop, 375px, and mobile.
 - Rewrote the hero paragraph (`.hero-sub`) for smoother flow and to work in a positioning claim + stats lead-in: "Blaze Robotics Academy develops the next generation of engineers, innovators, and leaders — from first-time builders to world-stage competitors. As the **#1 robotics academy in the Pacific Northwest**, our students and coaches deliver results that speak for themselves:" The colon leads straight into the stats grid below. (Kept in the existing paragraph element, since the hero's `grid-template-areas` would mis-place a bare new node.)
