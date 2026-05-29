@@ -6,6 +6,12 @@ All notable changes to the Blaze Robotics Academy website are recorded here.
 
 ### Changed
 
+#### Home hero — stats replaced (`index.html`)
+- Replaced the four hero stats (`K–12 / All Grades`, `100% / Hands-On`, `4 / Locations`, `20+ / Years Experience`) with six achievement/scale stats that better convey track record: **5000+ Students Taught**, **10+ Years**, **160+ State Qualifiers**, **50+ World Qualifiers**, **600+ Awards**, **30+ Communities & Schools Served**. The 2-column `.hstats` grid now flows to a 2×3 layout; each number keeps the gold `<em>` accent on its `+`. Verified no overflow and all labels fit at desktop, 375px, and mobile.
+- Rewrote the hero paragraph (`.hero-sub`) for smoother flow and to work in a positioning claim + stats lead-in: "Blaze Robotics Academy develops the next generation of engineers, innovators, and leaders — from first-time builders to world-stage competitors. As the **#1 robotics academy in the Pacific Northwest**, our students and coaches deliver results that speak for themselves:" The colon leads straight into the stats grid below. (Kept in the existing paragraph element, since the hero's `grid-template-areas` would mis-place a bare new node.)
+  - The "#1 robotics academy in the Pacific Northwest" phrase is wrapped in `<strong class="hl">` and emphasized in **gold** (`--gold-lt`, weight 700) to draw the eye to the claim.
+  - Credits "our students **and coaches**" (was just "students'") since the stats reflect the whole program — coaching, awards, communities served — not only student outcomes.
+
 #### Project reorganization — extracted shared code into directories
 - De-duplicated the site: the design system and shared JS were previously copy-pasted into all six pages (e.g. the logo change had to be made six times). Pulled the shared parts into external files — still fully static, no build step.
   - **`css/base.css`** — the 121 lines of design-system CSS that were byte-for-byte identical across all pages (`:root` tokens, typography, nav, buttons, section headers, footer, ticker, scroll-reveal, the base `@media(max-width:960px)` rules). Each page now has `<link rel="stylesheet" href="css/base.css">` **before** its own (page-specific-only) `<style>`, so page rules still override base.
