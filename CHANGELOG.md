@@ -6,6 +6,10 @@ All notable changes to the Blaze Robotics Academy website are recorded here.
 
 ### Changed
 
+#### Home — swapped section order (`index.html`)
+- Swapped the **The Blaze Journey** and **What We Believe** (Three Pillars) sections, so the journey now comes first (right after the hero) and the pillars follow. Flipped their `bg-white`/`bg-off` classes so the alternating background rhythm with neighboring sections is preserved (hero → white → off → white → …). Kept `id="journey"` on the Blaze Journey section so the hero's "Explore Programs" → `#journey` anchor still resolves.
+- Changed the Blaze Journey heading "**Four Stages.** One Solid Foundation." → "**Many Flexible Programs.** One Solid Foundation." — more accurate, since the program is a shared foundation (Ignite → Build) plus optional tracks (Compete / Innovate) rather than four fixed stages, and it reinforces the section's "the foundation is identical; where you go is your call" lead. The two lines are near-balanced (~14% width difference) and scale down cleanly on mobile.
+
 #### Three Pillars — added "iterate" to Design Thinking (`index.html`)
 - Added the iteration step to the Design Thinking pillar so the design-thinking loop is complete: description now ends "…prototype fast, test relentlessly, **and iterate until it works**," and a matching **Iterate** tag was added (now Empathize · Define · Ideate · Prototype · Test · Iterate).
 
