@@ -2,6 +2,32 @@
 
 All notable changes to the Blaze Robotics Academy website are recorded here.
 
+## 2026-05-28
+
+### Changed
+
+#### Logo — new image lockup (all 6 pages)
+- Replaced the site logo across all six pages (`index`, `ignite`, `build`, `compete`, `innovate`, `about`). The old logo was an inline base64-embedded gear/triangle mark **plus** a separate `.logo-text` wordmark ("Blaze Robotics" / "Academy"). Swapped both for a single image file, **`logo_trimmed.png`** (1890×288 horizontal lockup that already contains the mark + full "Blaze Robotics Academy" wordmark), and removed the now-redundant `.logo-text` spans.
+- Added a `.logo-img` rule (`height:42px; width:auto; display:block`) so the lockup sits at 42px tall in the 72px nav; mobile override (`≤960px`) drops it to 34px so it doesn't crowd the hamburger.
+- Removing the base64 data URIs shrank the files substantially (e.g. `index.html` 84KB → 45KB).
+- **Commented out** (rather than deleted) the now-unused `.logo-text` / `.logo-name` / `.logo-sub` CSS rules on all six pages, with a note, so the text-wordmark styles can be restored if we ever revert from the image logo.
+
+#### Mobile layout — fixed horizontal overflow on the home page (`index.html`)
+- The home page overflowed the viewport horizontally on phones (content ran off both edges; hero CTA paragraph text was cut off). Root cause was the classic CSS Grid `min-width:auto` track blowout: grid columns sized to their content's minimum width instead of the container, so tracks grew wider than the screen (the hero's `1fr` track resolved to ~658px on a 375px viewport).
+  - **Hero:** mobile `grid-template-columns:1fr` → **`minmax(0,1fr)`** so the single column can shrink to the viewport (the `minmax` floor of 0 lets the track contract).
+  - **Card grids** (`.pillars`, `.jgrid`, `.lgrid`): the 2-up mobile rule `1fr 1fr` → **`minmax(0,1fr) minmax(0,1fr)`** for the same reason.
+  - **Added a narrow-phone breakpoint** (`@media(max-width:560px)`) that stacks `.pillars`/`.jgrid`/`.lgrid` to a **single column** — at ~156px-wide cells the 2-up layout was too tight for card titles (e.g. "Engineering Excellence" spilled out of its cell). Tablets (560–960px) keep the 2-up layout. *(Note: this is a second breakpoint alongside the documented 960px one.)*
+- Verified zero horizontal overflow at 320px, 375px, and 768px; desktop layout unchanged.
+
+#### Featured Programs carousel — touch swipe (`index.html`)
+- Added finger-swipe navigation to the hero Featured Programs carousel for mobile/tablet, using Pointer Events. Swipe left → next card, swipe right → previous; the track follows the finger during the drag and animates to the nearest card on release.
+  - **Touch/pen only** — `pointerdown` returns early for `pointerType:'mouse'`, so desktop behavior (arrows + dots + auto-rotate) is unchanged.
+  - **Doesn't hijack vertical scrolling:** `touch-action:pan-y` on `.fp-track` plus an axis-decision check — if the first ~8px of movement is more vertical than horizontal, the carousel releases the gesture and lets the page scroll.
+  - **Snap threshold:** advances only if the drag exceeds `max(40px, 18% of card width)`, otherwise snaps back to the current card.
+  - **Tap vs. swipe:** a horizontal drag suppresses the subsequent `click` (capture-phase handler) so a swipe that ends over a "View Details" button doesn't accidentally navigate; clean taps still work.
+  - Auto-rotation pauses while dragging and resumes on release. Refactored the translate math into a shared `txFor(i)` helper used by both `go()` and the drag handler. Added `user-select:none` on the track to prevent text selection mid-swipe.
+- Verified via simulated touch events: left/right swipes change cards, a 25px drag snaps back, and a vertical drag leaves the carousel untouched.
+
 ## 2026-05-26
 
 ### Added

@@ -58,7 +58,14 @@ Dev server is configured in `.claude/launch.json` (named `static-site`):
 - **Avoid the repetitive "real … real … real" phrasing.** Lone natural uses are fine.
 
 ### Responsive
-- Mobile breakpoint is **`@media(max-width:960px)`**.
+- Primary breakpoint is **`@media(max-width:960px)`** (desktop → tablet/mobile).
+- `index.html` also has a **secondary phone breakpoint `@media(max-width:560px)`** that
+  stacks the card grids (`.pillars`, `.jgrid`, `.lgrid`) to a single column — at phone
+  widths the 2-up cells are too narrow for card titles and overflow. Tablets (560–960px)
+  keep the 2-up layout.
+- Mobile grid columns use **`minmax(0,1fr)`** (not plain `1fr`) so tracks can shrink to
+  the viewport — plain `1fr` has a `min-width:auto` floor that caused horizontal overflow
+  on the home page.
 - The hero uses CSS Grid `grid-template-areas` + `display:contents` (on `.hero-left`,
   `.hero-right`, `.hero-cta`) to reorder elements between desktop and mobile **without
   HTML changes**. Current mobile order: badge → headline → tagline → CTA top half →
