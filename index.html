@@ -630,37 +630,39 @@
     dots.forEach(d=>d.addEventListener('click',()=>{go(parseInt(d.dataset.i,10));start();}));
     const feat=document.querySelector('.hero-cta-feat');
     if(feat){feat.addEventListener('mouseenter',stop);feat.addEventListener('mouseleave',start);}
-    // --- finger swipe (touch/pen only; desktop keeps arrows + dots) ---
-    let dragging=false,decided=false,horiz=false,startX=0,startY=0,baseTx=0,suppressClick=false;
-    track.addEventListener('pointerdown',e=>{
-      if(e.pointerType==='mouse')return;
-      dragging=true;decided=false;horiz=false;suppressClick=false;
-      startX=e.clientX;startY=e.clientY;baseTx=txFor(idx);
+    // --- finger swipe (Touch Events — reliable on iOS Safari / Android) ---
+    let sx=0,sy=0,dragging=false,decided=false,horiz=false,baseTx=0,moved=false;
+    track.addEventListener('touchstart',e=>{
+      if(e.touches.length!==1)return;                     // ignore pinch/multi-touch
+      const t=e.touches[0];
+      sx=t.clientX;sy=t.clientY;baseTx=txFor(idx);
+      dragging=true;decided=false;horiz=false;moved=false;
       stop();
-    });
-    track.addEventListener('pointermove',e=>{
+    },{passive:true});
+    track.addEventListener('touchmove',e=>{
       if(!dragging)return;
-      const dx=e.clientX-startX,dy=e.clientY-startY;
-      if(!decided&&(Math.abs(dx)>8||Math.abs(dy)>8)){
-        decided=true;horiz=Math.abs(dx)>Math.abs(dy);
-        if(horiz){track.style.transition='none';try{track.setPointerCapture(e.pointerId);}catch(_){}}
-        else{dragging=false;start();return;}            // vertical intent → let the page scroll
+      const t=e.touches[0];
+      const dx=t.clientX-sx,dy=t.clientY-sy;
+      if(!decided){
+        if(Math.abs(dx)>8||Math.abs(dy)>8){decided=true;horiz=Math.abs(dx)>Math.abs(dy);if(horiz)track.style.transition='none';}
+        else return;
       }
-      if(decided&&horiz){suppressClick=true;track.style.transform='translateX('+(baseTx+dx)+'px)';}
-    });
-    const endDrag=e=>{
+      if(horiz){moved=true;e.preventDefault();track.style.transform='translateX('+(baseTx+dx)+'px)';}
+      // vertical: do nothing → the page scrolls normally (touch-action:pan-y)
+    },{passive:false});
+    const endTouch=e=>{
       if(!dragging)return;
       dragging=false;track.style.transition='';
-      const dx=(e&&e.clientX!=null)?e.clientX-startX:0;
+      const dx=(e.changedTouches&&e.changedTouches[0])?e.changedTouches[0].clientX-sx:0;
       const thresh=Math.max(40,cards[0].getBoundingClientRect().width*0.18);
       if(horiz&&dx<=-thresh)go(idx+1);
       else if(horiz&&dx>=thresh)go(idx-1);
       else go(idx);                                       // not far enough → snap back
       start();
     };
-    track.addEventListener('pointerup',endDrag);
-    track.addEventListener('pointercancel',endDrag);
-    track.addEventListener('click',e=>{if(suppressClick){e.preventDefault();e.stopPropagation();suppressClick=false;}},true);
+    track.addEventListener('touchend',endTouch);
+    track.addEventListener('touchcancel',endTouch);
+    track.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopPropagation();moved=false;}},true);
     window.addEventListener('resize',()=>go(idx));
     start();
   }

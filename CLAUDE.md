@@ -92,8 +92,11 @@ Dev server is configured in `.claude/launch.json` (named `static-site`):
 - Featured Programs carousel: auto-rotates every 4500ms, pauses on hover, peek layout
   (cards `flex:0 0 82%` so the next peeks in), pixel-based translate stepping, last card
   right-aligns via `Math.max(-idx*step, viewportW - trackW)`. Logic lives in `index.html`'s
-  own inline IIFE (separate from the shared `js/main.js`). Supports finger-swipe on
-  touch/pen (Pointer Events + `touch-action:pan-y`); desktop keeps arrows + dots.
+  own inline IIFE (separate from the shared `js/main.js`). Supports finger-swipe via
+  **Touch Events** (`touchmove` is `{passive:false}` so horizontal drags `preventDefault`;
+  vertical is left to scroll, aided by `touch-action:pan-y`). Touch Events were chosen over
+  Pointer Events because the latter are unreliable for touch dragging on iOS Safari. Desktop
+  keeps arrows + dots.
 
 ## Workflow expectations
 - **Log every change in `CHANGELOG.md`** (under the current date heading) — the user
