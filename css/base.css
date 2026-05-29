@@ -36,7 +36,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;
   padding:8px 14px;border-radius:4px;transition:all .15s;white-space:nowrap;text-transform:uppercase;letter-spacing:1px;}
 .nl a:hover{color:var(--dark);background:var(--off);}
 .nl a.on{color:var(--blue);background:var(--blue-lt);}
-.nl a.on-innovate{color:var(--teal);background:var(--teal-dim);}
+.nl a.on-innovate,.nl a.on-ignite{color:var(--teal);background:var(--teal-dim);}
 .enroll{font-family:var(--display);background:var(--red);color:white;font-size:15px;font-weight:800;
   padding:11px 24px;border-radius:4px;text-decoration:none;transition:background .15s;
   text-transform:uppercase;letter-spacing:1.5px;white-space:nowrap;}

@@ -117,17 +117,20 @@
 /* JOURNEY */
 /* Journey: two labeled groups — the sequential foundation (Step 01–02) and the parallel
    tracks (A/B). Groups sit side-by-side on wide screens, stack on smaller ones. */
-.jflow{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:56px;align-items:start;}
+.jflow{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:56px;align-items:stretch;}
+.jgroup{display:flex;flex-direction:column;}   /* lets the row fill, so all 4 cards share one height */
 .jgroup-label{font-family:var(--display);font-size:13px;font-weight:800;letter-spacing:2.5px;
   text-transform:uppercase;color:var(--blue);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
 .jgroup-label::before{content:'';width:22px;height:2px;background:var(--gold-lt);}
-.jrow{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.jrow{display:grid;grid-template-columns:1fr 1fr;gap:18px;flex:1;align-content:stretch;}
 .jcard{border-radius:8px;border:1px solid var(--border);background:white;overflow:hidden;
   transition:box-shadow .2s,transform .2s;text-decoration:none;display:flex;flex-direction:column;}
 .jcard:hover{box-shadow:0 8px 32px rgba(26,63,168,.14);transform:translateY(-5px);}
 .jcard-stripe{height:6px;}
-.s1{background:var(--blue-md);}.s2{background:var(--red);}
-.s3{background:var(--gold);}.s4{background:var(--teal);}
+.s1{background:#15ae8a;}        /* emerald-teal (matches innovate hero green)  — Ignite Curiosity */
+.s2{background:#0098DA;}        /* VEX IQ blue   — Build Mastery */
+.s3{background:#E0241C;}        /* VEX V5 red    — Compete */
+.s4{background:var(--gold);}    /* gold          — Innovate */
 .jcard-body{padding:28px 22px;flex:1;}
 .jcard-step{font-family:var(--display);font-size:12px;font-weight:800;letter-spacing:3px;
   text-transform:uppercase;color:var(--gray-lt);margin-bottom:14px;}
@@ -282,11 +285,11 @@
     <div class="hero-tagline">Design × Engineering × Collaboration</div>
     <p class="hero-sub">Blaze Robotics Academy develops the next generation of engineers, innovators, and leaders — from first-time builders to world-stage competitors. As the <strong class="hl">#1 robotics academy in the Pacific Northwest</strong>, our students and coaches deliver results that speak for themselves:</p>
     <div class="hstats">
-      <div class="hst"><div class="hst-n">5000<em>+</em></div><div class="hst-l">Students Taught</div></div>
+      <div class="hst"><div class="hst-n">3000<em>+</em></div><div class="hst-l">Students &amp; Alumni</div></div>
       <div class="hst"><div class="hst-n">10<em>+</em></div><div class="hst-l">Years</div></div>
       <div class="hst"><div class="hst-n">160<em>+</em></div><div class="hst-l">State Qualifiers</div></div>
       <div class="hst"><div class="hst-n">50<em>+</em></div><div class="hst-l">World Qualifiers</div></div>
-      <div class="hst"><div class="hst-n">600<em>+</em></div><div class="hst-l">Awards</div></div>
+      <div class="hst"><div class="hst-n">800<em>+</em></div><div class="hst-l">Awards</div></div>
       <div class="hst"><div class="hst-n">30<em>+</em></div><div class="hst-l">Communities &amp; Schools Served</div></div>
     </div>
   </div>
@@ -362,7 +365,7 @@
         <a href="ignite.html" class="jcard rv d1">
           <div class="jcard-stripe s1"></div>
           <div class="jcard-body">
-            <div class="jcard-step">Step 01</div>
+            <div class="jcard-step">Step I</div>
             <div class="jcard-ico">✨</div>
             <div class="jcard-title">Ignite Curiosity</div>
             <div class="jcard-desc">No experience needed. Discover what you love about building, creating, and solving problems. Try before you commit.</div>
@@ -375,7 +378,7 @@
         <a href="build.html" class="jcard rv d2">
           <div class="jcard-stripe s2"></div>
           <div class="jcard-body">
-            <div class="jcard-step">Step 02</div>
+            <div class="jcard-step">Step II</div>
             <div class="jcard-ico">🛠️</div>
             <div class="jcard-title">Build Mastery</div>
             <div class="jcard-desc">Structured courses and camps. Engineering, coding, and design skills built through real curriculum — at every grade level.</div>
@@ -388,12 +391,12 @@
       </div>
     </div>
     <div class="jgroup">
-      <div class="jgroup-label">Then Choose Your Track</div>
+      <div class="jgroup-label">Choose Your Path</div>
       <div class="jrow">
         <a href="compete.html" class="jcard rv d3">
           <div class="jcard-stripe s3"></div>
           <div class="jcard-body">
-            <div class="jcard-step">Track A</div>
+            <div class="jcard-step">Option I</div>
             <div class="jcard-ico">🏆</div>
             <div class="jcard-title">Compete</div>
             <div class="jcard-desc">For students who want to test their engineering on the competition floor, where tournament pressure drives real growth.</div>
@@ -406,7 +409,7 @@
         <a href="innovate.html" class="jcard rv d4">
           <div class="jcard-stripe s4"></div>
           <div class="jcard-body">
-            <div class="jcard-step">Track B</div>
+            <div class="jcard-step">Option II</div>
             <div class="jcard-ico">💡</div>
             <div class="jcard-title">Innovate</div>
             <div class="jcard-desc">For students who want to apply engineering to real-world problems. Capstone projects and Robot for Good initiatives.</div>
@@ -430,7 +433,7 @@
   </div>
   <div class="pillars">
     <div class="pillar rv d1">
-      <div class="pillar-num">01</div>
+      <div class="pillar-num">I</div>
       <div class="pillar-icon">🧠</div>
       <div class="pillar-title">Design Thinking</div>
       <div class="pillar-desc">We teach students to approach every challenge the way real engineers do — empathize with users, define the problem, ideate without limits, prototype fast, test relentlessly, and iterate until it works.</div>
@@ -441,7 +444,7 @@
       </div>
     </div>
     <div class="pillar p2 rv d2">
-      <div class="pillar-num">02</div>
+      <div class="pillar-num">II</div>
       <div class="pillar-icon">⚙️</div>
       <div class="pillar-title">Engineering Excellence</div>
       <div class="pillar-desc">Robotics brings together mechanical, electrical, and computer engineering — and our students work across all three. From competition-grade robots and real code to professional design tools and AI, we hold them to genuine technical standards.</div>
@@ -452,7 +455,7 @@
       </div>
     </div>
     <div class="pillar p3 rv d3">
-      <div class="pillar-num">03</div>
+      <div class="pillar-num">III</div>
       <div class="pillar-icon">🤝</div>
       <div class="pillar-title">Soft Skills That Stick</div>
       <div class="pillar-desc">Every robot is built by a team. Every project requires communication. Every setback demands resilience. These aren't side effects of robotics — they're the whole point.</div>

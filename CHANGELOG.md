@@ -6,6 +6,16 @@ All notable changes to the Blaze Robotics Academy website are recorded here.
 
 ### Changed
 
+#### Ignite Curiosity page — teal theme + matching nav (`ignite.html`, `css/base.css`)
+- Changed the Ignite hero to the Innovate page's teal-green gradient (`linear-gradient(135deg,#042027,#063a3c 40%,var(--teal) 90%,#15ae8a)`) and swapped its decorative glow from the old orange tint to a subtle light one to suit the new palette.
+- Applied the "active nav link matches the page color" effect (previously only on Innovate) to Ignite: generalized the base rule to `.nl a.on-innovate, .nl a.on-ignite{color:var(--teal);background:var(--teal-dim);}` and changed the Ignite page's active nav link from `class="on"` (blue) to `class="on-ignite"` (teal).
+
+#### Blaze Journey — equal card heights across both groups (`index.html`)
+- Fixed card bottoms not aligning at some widths. The two groups were separate grids, so cards only equalized height *within* a group; when a description wrapped to a different line count, the left and right pairs ended up different heights. Made all four share one height: `.jflow` uses `align-items:stretch` (groups equal height), `.jgroup` is a flex column, and `.jrow` is `flex:1; align-content:stretch` so its cards fill the shared height — with the footer pinned to the card bottom, all four footers now line up regardless of wrapping.
+
+#### Blaze Journey — recolored card stripes to VEX product lines (`index.html`)
+- Changed the four journey cards' top stripes (`.s1`–`.s4`) to match the VEX lines: Ignite Curiosity → **emerald-teal green** (`#15ae8a`, matching the Innovate page hero gradient), Build Mastery → **VEX IQ blue** (`#0098DA`), Compete → **VEX V5 red** (`#E0241C`), Innovate → **gold** (`var(--gold)`). (Greens/true-red aren't in the base palette, so VEX-accurate hex was used inline — easy to swap for exact brand values.)
+
 #### Blaze Journey — regrouped the four cards by structure (`index.html`)
 - The four journey cards were all equal peers, which hid that Step 01→02 is a shared sequence and Track A/B are parallel alternatives. Regrouped them into two labeled groups — **"Build Your Foundation"** (Step 01 Ignite, Step 02 Build) and **"Then Choose Your Track"** (Track A Compete, Track B Innovate). New markup: `.jflow` › two `.jgroup`s, each a `.jgroup-label` + a `.jrow` of two cards. Replaced the old `.jgrid` (`repeat(4,1fr)`).
 - Responsive: groups side-by-side on wide screens (4 cards in two labeled pairs, 40px gap between groups vs 18px within), stack vertically at ≤960px (each group keeps its 2 cards side by side), and fully single-column at ≤560px. Updated the 960/560 breakpoint rules accordingly (`.jflow` stacks at 960, `.jrow` stacks at 560).
