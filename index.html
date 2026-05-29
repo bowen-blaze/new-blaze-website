@@ -74,7 +74,11 @@
   display:flex;align-items:center;justify-content:center;transition:all .15s;}
 .fp-btn:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.4);color:white;}
 .fp-viewport{overflow:hidden;}
-.fp-track{display:flex;width:100%;gap:14px;transition:transform .35s ease;touch-action:pan-y;user-select:none;-webkit-user-select:none;}
+/* touch-action isn't inherited — set pan-y on the viewport AND every descendant so a
+   horizontal swipe is always handed to JS no matter which card/element the finger lands on
+   (otherwise the browser claims the gesture and cancels the drag mid-swipe on iOS). */
+.fp-viewport,.fp-viewport *{touch-action:pan-y;}
+.fp-track{display:flex;width:100%;gap:14px;transition:transform .35s ease;user-select:none;-webkit-user-select:none;}
 .fp-card{flex:0 0 82%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:12px;overflow:hidden;}
 .fp-thumb{height:128px;display:flex;align-items:center;justify-content:center;font-size:52px;margin:-12px -12px 14px;}
 .fp-thumb.t1{background:linear-gradient(135deg,var(--blue-dk),var(--blue-md));}
@@ -635,11 +639,11 @@
     // preventDefault() on a horizontal touchmove already stops the browser from
     // synthesizing a click for that gesture, so a swipe never fires a card's link —
     // while a plain tap (which never reaches that preventDefault) clicks normally.
-    let sx=0,sy=0,dragging=false,decided=false,horiz=false,baseTx=0;
+    let sx=0,sy=0,st=0,dragging=false,decided=false,horiz=false,baseTx=0;
     track.addEventListener('touchstart',e=>{
       if(e.touches.length!==1)return;                     // ignore pinch/multi-touch
       const t=e.touches[0];
-      sx=t.clientX;sy=t.clientY;baseTx=txFor(idx);
+      sx=t.clientX;sy=t.clientY;st=Date.now();baseTx=txFor(idx);
       dragging=true;decided=false;horiz=false;
       stop();
     },{passive:true});
@@ -658,10 +662,13 @@
       if(!dragging)return;
       dragging=false;track.style.transition='';
       const dx=(e.changedTouches&&e.changedTouches[0])?e.changedTouches[0].clientX-sx:0;
+      const dt=Math.max(1,Date.now()-st);
+      const v=dx/dt;                                      // px/ms; negative = leftward
       const thresh=Math.max(35,cards[0].getBoundingClientRect().width*0.15);
-      if(horiz&&dx<=-thresh)go(idx+1);
-      else if(horiz&&dx>=thresh)go(idx-1);
-      else go(idx);                                       // not far enough → snap back
+      const flick=Math.abs(dx)>12&&Math.abs(v)>0.3;       // quick short swipe still commits
+      if(horiz&&(dx<=-thresh||(flick&&dx<0)))go(idx+1);
+      else if(horiz&&(dx>=thresh||(flick&&dx>0)))go(idx-1);
+      else go(idx);                                       // not far/fast enough → snap back
       start();
     };
     track.addEventListener('touchend',endTouch);
