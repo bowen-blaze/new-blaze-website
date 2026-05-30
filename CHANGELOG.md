@@ -6,7 +6,11 @@ All notable changes to the Blaze Robotics Academy website are recorded here.
 
 ### Changed
 
+#### Home hero — decorative circles no longer tint the headline (`index.html`)
+- The orange `.hero::before` circle is absolutely positioned, so it painted *above* the in-flow `<h1>` and laid a ~12% orange tint over "THINK./BUILD." where they overlapped. Fixed by making `.hero` a stacking context (`isolation:isolate`) and giving both decorative circles (`::before`/`::after`) `z-index:-1`, so they render above the gradient but behind all hero text. Headline is now clean white; circles remain visible as background decoration.
+
 #### Ignite Curiosity page — teal theme + matching nav (`ignite.html`, `css/base.css`)
+- Changed the hero's primary CTA "Book a Free Trial" from `btn-red` (orange) to **`btn-gold`** so it harmonizes with the new teal hero (teal + gold) and matches the Innovate page's gold hero CTA. (The secondary button was already `btn-out-w` outlined-white, same as Innovate.) Left the bottom-CTA-band button and the quiz-result button as-is.
 - Changed the Ignite hero to the Innovate page's teal-green gradient (`linear-gradient(135deg,#042027,#063a3c 40%,var(--teal) 90%,#15ae8a)`) and swapped its decorative glow from the old orange tint to a subtle light one to suit the new palette.
 - Applied the "active nav link matches the page color" effect (previously only on Innovate) to Ignite: generalized the base rule to `.nl a.on-innovate, .nl a.on-ignite{color:var(--teal);background:var(--teal-dim);}` and changed the Ignite page's active nav link from `class="on"` (blue) to `class="on-ignite"` (teal).
 

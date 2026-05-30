@@ -11,7 +11,7 @@
   grid-template-areas:"badge cta" "h1 cta" "tagline cta" "para cta" "stats cta";
   justify-content:center;align-content:center;column-gap:20px;
   background:linear-gradient(135deg,#0a1140 0%,var(--blue-dk) 60%,var(--blue) 100%);
-  position:relative;overflow:hidden;padding:130px 24px 70px;}
+  position:relative;overflow:hidden;padding:130px 24px 70px;isolation:isolate;}
 .hero-left{display:contents;}
 .hero .est-badge{grid-area:badge;}
 .hero h1{grid-area:h1;}
@@ -20,9 +20,9 @@
 .hero .hstats{grid-area:stats;}
 .hero-right{grid-area:cta;}
 .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;
-  border-radius:50%;background:rgba(220,74,10,.12);pointer-events:none;}
+  border-radius:50%;background:rgba(220,74,10,.12);pointer-events:none;z-index:-1;}
 .hero::after{content:'';position:absolute;bottom:-80px;left:25%;width:400px;height:400px;
-  border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none;}
+  border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none;z-index:-1;}
 .hero-right{min-width:0;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;}
 
 .est-badge{display:inline-flex;align-items:center;gap:8px;
