@@ -29,7 +29,7 @@ Every page has `<link rel="stylesheet" href="css/base.css">` **before** its own 
 
 | File | Page | Purpose |
 | --- | --- | --- |
-| `index.html` | Home | Overview, three pillars, four-stage journey. **Most actively edited.** Has page-specific carousel JS in its own inline IIFE. |
+| `index.html` | Home | Overview, three pillars, the Blaze Journey (shared foundation + two tracks). **Most actively edited.** Has page-specific carousel JS in its own inline IIFE. |
 | `ignite.html` | Ignite Curiosity | Step 01 — trial classes / membership, no experience needed. Inline `showQ()` helper. |
 | `build.html` | Build Mastery | Step 02 — structured courses & camps by grade. Inline `filterC()` helper. |
 | `compete.html` | Compete | Track A — competition teams, tournament prep. |
@@ -63,6 +63,14 @@ Dev server is configured in `.claude/launch.json` (named `static-site`):
   kept **commented out** in each page's `<style>` in case we revert.
 - Card corners ~8px with top/left gold accent borders. Glassmorphism for the hero CTA
   panel (translucent bg + `backdrop-filter:blur` + gold top border).
+- **Per-page accent / nav theming:** `ignite.html` and `innovate.html` use the teal theme —
+  teal-green hero gradient + a gold (`btn-gold`) primary CTA. Their active nav link "matches
+  the page color" via `.nl a.on-innovate, .nl a.on-ignite` (teal); other pages use the default
+  blue `.nl a.on`.
+- **Blaze Journey section (`index.html`):** two labeled groups — `.jgroup` "Build Your
+  Foundation" (Step 01 Ignite, Step 02 Build) and "Then Choose Your Track" (Track A Compete,
+  Track B Innovate) — inside `.jflow`; all four `.jcard`s are stretched to one shared height.
+  Card top-stripes (`.s1`–`.s4`) are colored by VEX line (GO green / IQ blue / V5 red / gold).
 - `about.html` was originally a different design system (Outfit font) — it has been fully
   restyled to match the others. Keep it consistent with the shared system.
 

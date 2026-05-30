@@ -12,12 +12,13 @@ Condensed) loaded over CDN.
 
 ## Pages
 
-The site is organized around "The Blaze Journey" — a four-stage path that all pages link to
-via a shared top navigation.
+The site is organized around "The Blaze Journey" — a flexible path with a shared foundation
+(Ignite → Build) and two optional tracks (Compete / Innovate), linked from a shared top
+navigation.
 
 | File | Page | Purpose |
 | --- | --- | --- |
-| `index.html` | Home | Overview of the academy, its three pillars, and the four-stage journey. |
+| `index.html` | Home | Overview of the academy, its three pillars, and the Blaze Journey program path. |
 | `ignite.html` | Ignite Curiosity | Step 01 — intro / trial classes and membership, no experience required. |
 | `build.html` | Build Mastery | Step 02 — structured courses and camps by grade level. |
 | `compete.html` | Compete | Track A — competition teams and tournament prep (VEX Robotics). |
